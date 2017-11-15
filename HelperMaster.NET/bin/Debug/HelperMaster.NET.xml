@@ -4,6 +4,26 @@
         <name>HelperMaster.NET</name>
     </assembly>
     <members>
+        <member name="T:HelperMaster.NET.Criptografia.AES">
+            <summary>
+            Clase que define los métodos de encriptación y desencriptación AES de datos complementarios a los que 
+            trae .NET Framework.
+            </summary>
+        </member>
+        <member name="M:HelperMaster.NET.Criptografia.AES.Encriptar(System.String)">
+            <summary>
+            Método que permite encriptar un texto.
+            </summary>
+            <param name="plainMessage">El texto a encriptar.</param>
+            <returns>El texto encriptado.</returns>
+        </member>
+        <member name="M:HelperMaster.NET.Criptografia.AES.Desencriptar(System.String)">
+            <summary>
+            Método que permite desencriptar un texto.
+            </summary>
+            <param name="encryptedMessage">El texto encriptado.</param>
+            <returns>El texto desencriptado.</returns>
+        </member>
         <member name="T:HelperMaster.NET.DataAnnotations.HelperDataAnnotations">
             <summary>
             Clase de ayudante orientado a procesar Data Annotations.
@@ -80,6 +100,21 @@
             </summary>
             <param name="ListaElementos">La lista de todos los elementos.</param>
             <returns>La lista de elementos.</returns>
+        </member>
+        <member name="T:HelperMaster.NET.DTO.Div">
+            <summary>
+            Clase que define la estructura de datos complementarios a los atributos de un tag DIV HTML.
+            </summary>
+        </member>
+        <member name="P:HelperMaster.NET.DTO.Div.Visible">
+            <summary>
+            Atributo que guarda o establece si el tag DIV es visible o no.
+            </summary>
+        </member>
+        <member name="P:HelperMaster.NET.DTO.Div.ReadOnly">
+            <summary>
+            Atributo que guarda o establece si el contenido del tag DIV es de sólo lectura o no.
+            </summary>
         </member>
         <member name="T:HelperMaster.NET.DTO.Respuesta`1">
             <summary>
@@ -161,6 +196,27 @@
             Atributo que guarda o establece el tipo de respuesta devuelto.
             </summary>
         </member>
+        <member name="T:HelperMaster.NET.Enum.EstadoCheckBox">
+            <summary>
+            Enumeracion equivalente a los estados de chequeo de un CheckBox de WindowsForms.
+            </summary>
+        </member>
+        <member name="F:HelperMaster.NET.Enum.EstadoCheckBox.Unchecked">
+            <summary>
+            El control esta desactivado.
+            </summary>
+        </member>
+        <member name="F:HelperMaster.NET.Enum.EstadoCheckBox.Checked">
+            <summary>
+            El control esta activado.
+            </summary>
+        </member>
+        <member name="F:HelperMaster.NET.Enum.EstadoCheckBox.Indeterminate">
+            <summary>
+            El estado de activacion del control es indeterminado. Un control de estado
+            indeterminado generalmente tiene una apariencia sombreada.
+            </summary>
+        </member>
         <member name="T:HelperMaster.NET.Enum.TipoRespuesta">
             <summary>
             Enumeracion que permite clasificar una respuesta del sistema interno.
@@ -238,6 +294,119 @@
             <param name="Lista">La lista de string proporcionada.</param>
             <param name="Separador">Caracter separador</param>
             <returns>TRUE = Los datos procesados; FALSE = Datos vacíos.</returns>
+        </member>
+        <member name="M:HelperMaster.NET.General.Conversion.Arreglo2DTo1D(System.Int32[0:,0:])">
+            <summary>
+            Método que permite convertir de un arreglo de dos dimensiones a una dimensión.
+            </summary>
+            <param name="Datos">El arreglo de dos dimensiones.</param>
+            <returns>El arreglo de una dimensión.</returns>
+        </member>
+        <member name="M:HelperMaster.NET.General.Conversion.Arreglo1DTo2D(System.Int32[],System.Int32,System.Int32)">
+            <summary>
+            Método que permite convertir un arreglo de una dimensión a un arreglo de dos dimensiones.
+            </summary>
+            <param name="Datos">El arreglo de una dimensión.</param>
+            <param name="Filas">Las filas del arreglo.</param>
+            <param name="Columnas">Las columnas del arreglo.</param>
+            <returns>El arreglo de dos dimensiones.</returns>
+        </member>
+        <member name="T:HelperMaster.NET.MVC.HelperMVC">
+            <summary>
+            Clase de ayudante orientado al arquetipo MVC.
+            </summary>
+        </member>
+        <member name="M:HelperMaster.NET.MVC.HelperMVC.ConsultarValorEnlazadorModelo(System.Web.Mvc.ValueProviderResult,System.String)">
+            <summary>
+            Método que permite capturar un dato proveniente de la vista.
+            </summary>
+            <param name="Valor">El valor proveniente del proveedor de valores.</param>
+            <param name="ValorDefecto">El valor por defecto que es palabra vacía.</param>
+            <returns>El valor capturado.</returns>
+        </member>
+        <member name="M:HelperMaster.NET.MVC.HelperMVC.ConsultarValorEnlazadorModelo(System.Web.Mvc.ModelBindingContext,System.String,System.Type)">
+            <summary>
+            Método que permite capturar un dato proveniente de la vista.
+            </summary>
+            <param name="bindingContext">El contexto de enlazador de modelos proporcionado.</param>
+            <param name="Valor">El valor que especifica la variable declarada en la vista.</param>
+            <param name="Tipificacion">La tipificación deseada del valor capturado.</param>
+            <returns>El valor capturado con su tipificación deseada.</returns>
+        </member>
+        <member name="M:HelperMaster.NET.MVC.HelperMVC.ExtraerNumeroDeMascara(System.String,System.Type)">
+            <summary>
+            Método que permite extraer el número encontrado dentro de una máscara que proviene desde la interfaz usuaria.
+            </summary>
+            <param name="NumeroEnMascara">El número que está dentro de una máscara.</param>
+            <param name="Tipificacion">La tipificación numérica deseada.</param>
+            <returns>El número sin la máscara con su tipificación específica.</returns>
+        </member>
+        <member name="M:HelperMaster.NET.MVC.HelperMVC.ToSelectList">
+            <summary>
+            Método que permite setear un arreglo de datos en la interfaz usuaria.
+            </summary>
+            <returns>El arreglo de datos seteado.</returns>
+        </member>
+        <member name="M:HelperMaster.NET.MVC.HelperMVC.ToSelectList(System.Collections.Generic.List{HelperMaster.NET.DTO.DatoComboBox})">
+            <summary>
+            Método que permite parsear una lista de datos a un arreglo de datos de la interfaz usuaria.
+            </summary>
+            <param name="Generico">La lista de datos genéricos.</param>
+            <returns>El arreglo de datos para la interfaz usuaria.</returns>
+        </member>
+        <member name="M:HelperMaster.NET.MVC.HelperMVC.ObtenerDisplayName``1(System.Linq.Expressions.Expression{System.Func{``0,System.Object}})">
+            <summary>
+            Método que permite extraer el nombre de etiqueta de un atributo de entidad de clase específica.
+            </summary>
+            <typeparam name="TModel">La clase de entidad proporcionada.</typeparam>
+            <param name="expression">La expresión lamda determinada (se especifica el atributo a extraer su etiqueta).</param>
+            <returns>La etiqueta extraída.</returns>
+        </member>
+        <member name="T:HelperMaster.NET.MVC.HtmlHelperMVC">
+            <summary>
+            Clase que permite complementar Helpers de los ya existentes hacia la vista.
+            </summary>
+        </member>
+        <member name="M:HelperMaster.NET.MVC.HtmlHelperMVC.DivFor``1(System.Web.Mvc.HtmlHelper{``0},System.Linq.Expressions.Expression{System.Func{``0,HelperMaster.NET.DTO.Div}},System.Web.Mvc.MvcHtmlString,System.Object)">
+            <summary>
+            Método Helper que permite utilizar el tag DIV de forma automatizada dentro de un ViewModel.
+            </summary>
+            <typeparam name="TModel">El modelo a trabajar.</typeparam>
+            <param name="helper">El Helper de MVC (tomado de forma implícita).</param>
+            <param name="expression">La expresión Linq, refiriéndose a un elemento del modelo.</param>
+            <param name="SubTag">El tag hijo para incorporar dentro del tag DIV.</param>
+            <param name="HtmlAttributes">Atributos adicionales hacia el tag DIV.</param>
+            <returns>El tag DIV construido.</returns>
+        </member>
+        <member name="M:HelperMaster.NET.MVC.HtmlHelperMVC.DivFor``1(System.Web.Mvc.HtmlHelper{``0},System.Linq.Expressions.Expression{System.Func{``0,HelperMaster.NET.DTO.Div}},System.Collections.Generic.List{System.Web.Mvc.MvcHtmlString},System.Object)">
+            <summary>
+            Método Helper que permite utilizar el tag DIV de forma automatizada dentro de un ViewModel.
+            </summary>
+            <typeparam name="TModel">El modelo a trabajar.</typeparam>
+            <param name="helper">El Helper de MVC (tomado de forma implícita).</param>
+            <param name="expression">La expresión Linq, refiriéndose a un elemento del modelo.</param>
+            <param name="ListaSubTag">El(los) tag(s) hijo(s) para incorporar dentro del tag DIV.</param>
+            <param name="HtmlAttributes">Atributos adicionales hacia el tag DIV.</param>
+            <returns>El tag DIV construido.</returns>
+        </member>
+        <member name="M:HelperMaster.NET.MVC.HtmlHelperMVC.HiddenEncryptFor``2(System.Web.Mvc.HtmlHelper{``0},System.Linq.Expressions.Expression{System.Func{``0,``1}})">
+            <summary>
+            Método Helper que permite utilizar el tag INPUT de tipo HIDDEN de forma automatizada dentro de un ViewModel.
+            </summary>
+            <typeparam name="TModel">El modelo a trabajar.</typeparam>
+            <typeparam name="TValue">El valor a trabajar.</typeparam>
+            <param name="helper">El Helper de MVC (tomado de forma implícita).</param>
+            <param name="expression">La expresión Linq, refiriéndose a un elemento del modelo.</param>
+            <returns>El tag INPUT tipo HIDDEN construido.</returns>
+        </member>
+        <member name="M:HelperMaster.NET.MVC.HtmlHelperMVC.CheckBoxFor``1(System.Web.Mvc.HtmlHelper{``0},System.Linq.Expressions.Expression{System.Func{``0,HelperMaster.NET.Enum.EstadoCheckBox}})">
+            <summary>
+            Método Helper que permite utilizar el tag INPUT de tipo CHECKBOX de forma automatizada dentro de un ViewModel.
+            </summary>
+            <typeparam name="TModel">El modelo a trabajar.</typeparam>
+            <param name="helper">El Helper de MVC (tomado de forma implícita).</param>
+            <param name="expression">La expresión Linq, refiriéndose a un elemento del modelo.</param>
+            <returns>El tag INPUT tipo CHECKBOX construido.</returns>
         </member>
         <member name="T:HelperMaster.NET.WindowsForms.HelperWindowsForms">
             <summary>

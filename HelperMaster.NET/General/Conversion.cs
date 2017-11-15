@@ -71,5 +71,51 @@ namespace HelperMaster.NET.General
             }
             return string.Empty;
         }
+        /// <summary>
+        /// Método que permite convertir de un arreglo de dos dimensiones a una dimensión.
+        /// </summary>
+        /// <param name="Datos">El arreglo de dos dimensiones.</param>
+        /// <returns>El arreglo de una dimensión.</returns>
+        public static int[] Arreglo2DTo1D(int[,] Datos)
+        {
+            int EjeX = Datos.GetLength(0);
+            int EjeY = Datos.GetLength(1);
+            int[] Resp = new int[EjeX * EjeY];
+
+            int Indice1D = 0;
+            for (int Fila = 0; Fila < EjeX; Fila++)
+            {
+                for (int Columna = 0; Columna < EjeY; Columna++)
+                {
+                    Resp[Indice1D] = Datos[Fila, Columna];
+                    Indice1D++;
+                }
+            }
+
+            return Resp;
+        }
+        /// <summary>
+        /// Método que permite convertir un arreglo de una dimensión a un arreglo de dos dimensiones.
+        /// </summary>
+        /// <param name="Datos">El arreglo de una dimensión.</param>
+        /// <param name="Filas">Las filas del arreglo.</param>
+        /// <param name="Columnas">Las columnas del arreglo.</param>
+        /// <returns>El arreglo de dos dimensiones.</returns>
+        public static int[,] Arreglo1DTo2D(int[] Datos, int Filas, int Columnas)
+        {
+            int[,] Resp = new int[Filas, Columnas];
+
+            int Indice1D = 0;
+            for (int Fila = 0; Fila < Filas; Fila++)
+            {
+                for (int Columna = 0; Columna < Columnas; Columna++)
+                {
+                    Resp[Fila, Columna] = Datos[Indice1D];
+                    Indice1D++;
+                }
+            }
+
+            return Resp;
+        }
     }
 }
