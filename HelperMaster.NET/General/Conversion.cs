@@ -72,6 +72,25 @@ namespace HelperMaster.NET.General
             return string.Empty;
         }
         /// <summary>
+        /// Método que convierte una lista de enteros en una sola variable de string.
+        /// </summary>
+        /// <param name="Lista">La lista de enteros proporcionada.</param>
+        /// <param name="Separador">Caracter separador</param>
+        /// <returns>TRUE = Los datos procesados; FALSE = Datos vacíos.</returns>
+        public static string ListOfIntToString(List<int> Lista, string Separador = ",")
+        {
+            if (Lista != null)
+            {
+                if (Lista.Any())
+                {
+                    if (Lista.Count() < 2)
+                    { return string.Empty; }
+                    return string.Join(Separador, Lista);
+                }
+            }
+            return string.Empty;
+        }
+        /// <summary>
         /// Método que permite convertir de un arreglo de dos dimensiones a una dimensión.
         /// </summary>
         /// <param name="Datos">El arreglo de dos dimensiones.</param>

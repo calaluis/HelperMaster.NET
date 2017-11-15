@@ -295,6 +295,14 @@
             <param name="Separador">Caracter separador</param>
             <returns>TRUE = Los datos procesados; FALSE = Datos vacíos.</returns>
         </member>
+        <member name="M:HelperMaster.NET.General.Conversion.ListOfIntToString(System.Collections.Generic.List{System.Int32},System.String)">
+            <summary>
+            Método que convierte una lista de enteros en una sola variable de string.
+            </summary>
+            <param name="Lista">La lista de enteros proporcionada.</param>
+            <param name="Separador">Caracter separador</param>
+            <returns>TRUE = Los datos procesados; FALSE = Datos vacíos.</returns>
+        </member>
         <member name="M:HelperMaster.NET.General.Conversion.Arreglo2DTo1D(System.Int32[0:,0:])">
             <summary>
             Método que permite convertir de un arreglo de dos dimensiones a una dimensión.
