@@ -4,6 +4,35 @@
         <name>HelperMaster.NET</name>
     </assembly>
     <members>
+        <member name="T:HelperMaster.NET.DataAnnotations.HelperDataAnnotations">
+            <summary>
+            Clase de ayudante orientado a procesar Data Annotations.
+            </summary>
+        </member>
+        <member name="M:HelperMaster.NET.DataAnnotations.HelperDataAnnotations.ValidarCamposFormulario(System.Object)">
+            <summary>
+            Metodo que permite validar los campos de un formulario que utiliza Data Annotations.
+            </summary>
+            <param name="Formulario">El objeto de formulario a validar.</param>
+            <returns>TRUE = No hay errores; FALSE = Hay errores en el formulario.</returns>
+        </member>
+        <member name="M:HelperMaster.NET.DataAnnotations.HelperDataAnnotations.BucearObjetosParaValidar(System.Object)">
+            <summary>
+            Metodo que permite validar grandes formularios que contienen jerarquia de clases.
+            </summary>
+            <param name="Objeto">El objeto de gran formulario a validar.</param>
+            <returns>TRUE = No hay errores; FALSE = Hay errores en el formulario.</returns>
+        </member>
+        <member name="M:HelperMaster.NET.DataAnnotations.HelperDataAnnotations.ValidadorMaestro(System.Object)">
+            <summary>
+            Metodo que permite validar un formulario cualquiera, utilizando DataAnnotations. 
+            NOTA: El alcance del validador no ve mas alla dentro del contenido de una lista generica, porque la lista es una clase de .NET Framework; 
+            para ello, debe aplicarse este metodo por segunda vez a la clase DTO que compone la lista declarada; 
+            a excepcion para el caso que el flujo de validaciones sea tratado en el mismo lugar (por un bucle que trate la coleccion de datos).
+            </summary>
+            <param name="Datos">El objeto del formulario proporcionado.</param>
+            <returns>TRUE = La validacion ha sido exitosa; FALSE = Error(es) en la validacion.</returns>
+        </member>
         <member name="T:HelperMaster.NET.DTO.DatoComboBox">
             <summary>
             Clase que define la estructura de ComboBox o DropDownList utilizados.
@@ -186,7 +215,7 @@
             <param name="NumeroPorDefecto">El numero por defecto en caso que la conversion falle.</param>
             <returns>TRUE = El nujmero convertido; FALSE = el numero por defecto.</returns>
         </member>
-        <member name="M:HelperMaster.NET.General.Conversion.ConvertirStringADateTime(System.String,System.Nullable{System.DateTime})">
+        <member name="M:HelperMaster.NET.General.Conversion.StringToDateTime(System.String,System.Nullable{System.DateTime})">
             <summary>
             Metodo que permite convertir un string a DateTime.
             </summary>
@@ -194,7 +223,7 @@
             <param name="FechaPorDefecto">La fecha por defecto en caso que la conversion falle.</param>
             <returns>TRUE = La fecha convertida; FALSE = La fecha por defecto.</returns>
         </member>
-        <member name="M:HelperMaster.NET.General.Conversion.ConvertirStringADouble(System.String,System.Double)">
+        <member name="M:HelperMaster.NET.General.Conversion.StringToDouble(System.String,System.Double)">
             <summary>
             Metodo que permite convertir un string a double.
             </summary>
@@ -202,12 +231,20 @@
             <param name="NumeroPorDefecto">El numero por defecto en caso que la conversion falle.</param>
             <returns>TRUE = El nujmero convertido; FALSE = el numero por defecto.</returns>
         </member>
-        <member name="T:HelperMaster.NET.WindowsForms.Helper">
+        <member name="M:HelperMaster.NET.General.Conversion.ListOfStringToString(System.Collections.Generic.List{System.String},System.String)">
+            <summary>
+            Método que convierte una lista de string en una sola variable de string.
+            </summary>
+            <param name="Lista">La lista de string proporcionada.</param>
+            <param name="Separador">Caracter separador</param>
+            <returns>TRUE = Los datos procesados; FALSE = Datos vacíos.</returns>
+        </member>
+        <member name="T:HelperMaster.NET.WindowsForms.HelperWindowsForms">
             <summary>
             Clase de ayudante orientado al arquetipo WINDOWS FORMS.
             </summary>
         </member>
-        <member name="M:HelperMaster.NET.WindowsForms.Helper.ObtenerLista(System.Windows.Forms.ComboBox)">
+        <member name="M:HelperMaster.NET.WindowsForms.HelperWindowsForms.ObtenerLista(System.Windows.Forms.ComboBox)">
             <summary>
             Metodo estatico que permite realizar una conversion desde un control ComboBox hacia una lista generica equivalente. 
             NOTA: Este funciona a cualquier tipo de tipificacion de la ID del item seleccionado, es decir, 
@@ -215,6 +252,59 @@
             </summary>
             <param name="Datos">Datos que contiene un control ComboBox de Windows Forms.</param>
             <returns>Los datos convertidos en una lista generica.</returns>
+        </member>
+        <member name="M:HelperMaster.NET.WindowsForms.HelperWindowsForms.ObtenerLista(System.Windows.Forms.DataGridViewComboBoxCell)">
+            <summary>
+            Metodo estatico que permite realizar una conversion desde un control DataGridViewComboBoxCell hacia una lista generica equivalente. 
+            NOTA: Este funciona a cualquier tipo de tipificacion de la ID del item seleccionado, es decir, 
+            perfectamente la ID puede ser de tipo string.
+            </summary>
+            <param name="Datos">Datos que contiene un control DataGridViewComboBoxCell de Windows Forms.</param>
+            <returns>Los datos convertidos en una lista generica.</returns>
+        </member>
+        <member name="M:HelperMaster.NET.WindowsForms.HelperWindowsForms.ListaToComboBox(System.Windows.Forms.ComboBox,System.Collections.Generic.List{HelperMaster.NET.DTO.DatoComboBox})">
+            <summary>
+            Metodo que permite poblar un ComboBox a partir de los datos estandarizados que se obtienen desde la capa inferior.
+            </summary>
+            <param name="EstructuraWinForm">El objeto ComboBox ya definido.</param>
+            <param name="Datos">Los datos obtenidos.</param>
+            <returns>El ComboBox poblado.</returns>
+        </member>
+        <member name="M:HelperMaster.NET.WindowsForms.HelperWindowsForms.ListaToComboBoxCell(System.Windows.Forms.DataGridViewComboBoxCell,System.Collections.Generic.List{HelperMaster.NET.DTO.DatoComboBox})">
+            <summary>
+            Metodo que permite poblar un DataGridViewComboBoxCell a partir de los datos estandarizados que se obtienen desde la capa inferior.
+            </summary>
+            <param name="EstructuraWinForm">El objeto DataGridViewComboBoxCell ya definido.</param>
+            <param name="Datos">Los datos obtenidos.</param>
+            <returns>El ComboBox poblado.</returns>
+        </member>
+        <member name="M:HelperMaster.NET.WindowsForms.HelperWindowsForms.ObtenerLista(System.Windows.Forms.ListBox)">
+            <summary>
+            Metodo estatico que permite realizar una conversion desde un control ListBox hacia una lista generica equivalente. 
+            NOTA: Este funciona a cualquier tipo de tipificacion de la ID del item seleccionado, es decir, 
+            perfectamente la ID puede ser de tipo string.
+            </summary>
+            <param name="Datos">Datos que contiene un control ListBox de Windows Forms.</param>
+            <returns>Los datos convertidos en una lista generica.</returns>
+        </member>
+        <member name="M:HelperMaster.NET.WindowsForms.HelperWindowsForms.VentanaActiva``1">
+            <summary>
+            Metodo que permite saber, si una ventana de formulario esta activo o no en la ejecucion de la aplicacion.
+            </summary>
+            <returns>TRUE = Ventna activa; FALSE = No hay ventana activa.</returns>
+        </member>
+        <member name="M:HelperMaster.NET.WindowsForms.HelperWindowsForms.CerrarVentana``1">
+            <summary>
+            Metodo que permite cerrar una ventana de WindowsForms especificada.
+            </summary>
+            <typeparam name="T">La clase tipificada de ventana a cerrar.</typeparam>
+        </member>
+        <member name="M:HelperMaster.NET.WindowsForms.HelperWindowsForms.CrearArchivoDesdeEnsamblado(System.String)">
+            <summary>
+            Metodo que permite obtener un archivo incrustado desde el ensamblado para ser guardado en disco.
+            </summary>
+            <param name="NombreArchivo">El nombre del archivo a obtener dentro del ensamblado.</param>
+            <returns>TRUE = La ruta fisica del archivo rescatado; FALSE = El archivo no fue encontrado dentro del ensamblado.</returns>
         </member>
     </members>
 </doc>
