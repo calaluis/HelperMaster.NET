@@ -11,7 +11,7 @@ namespace HelperMaster.NET.WindowsForms
     /// <summary>
     /// Clase de ayudante orientado al arquetipo WINDOWS FORMS.
     /// </summary>
-    public class Helper
+    public class HelperWindowsForms
     {
         /// <summary>
         /// Metodo estatico que permite realizar una conversion desde un control ComboBox hacia una lista generica equivalente. 
