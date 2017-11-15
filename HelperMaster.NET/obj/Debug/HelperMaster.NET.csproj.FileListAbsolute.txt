@@ -1,0 +1,7 @@
+F:\GitHub\HelperMaster.NET\HelperMaster.NET\bin\Debug\HelperMaster.NET.xml
+F:\GitHub\HelperMaster.NET\HelperMaster.NET\bin\Debug\HelperMaster.NET.dll
+F:\GitHub\HelperMaster.NET\HelperMaster.NET\bin\Debug\HelperMaster.NET.pdb
+F:\GitHub\HelperMaster.NET\HelperMaster.NET\obj\Debug\HelperMaster.NET.csproj.CoreCompileInputs.cache
+F:\GitHub\HelperMaster.NET\HelperMaster.NET\obj\Debug\HelperMaster.NET.dll
+F:\GitHub\HelperMaster.NET\HelperMaster.NET\obj\Debug\HelperMaster.NET.pdb
+F:\GitHub\HelperMaster.NET\HelperMaster.NET\obj\Debug\HelperMaster.NET.csprojResolveAssemblyReference.cache

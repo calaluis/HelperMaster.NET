@@ -1,8 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace HelperMaster.NET.General
 {
@@ -13,20 +9,46 @@ namespace HelperMaster.NET.General
     public class Conversion
     {
         /// <summary>
-        /// Método que permite convertir desde un string a un decimal.
+        /// Metodo que permite convertir un string a decimal.
         /// </summary>
-        /// <param name="Dato">El dato de tipo string a convertir.</param>
-        /// <param name="ValorDefecto">El valor por defecto en caso que la conversión falle. 
-        /// Por defecto es cero.</param>
-        /// <returns>El valor convertidoo.</returns>
-        public static decimal StringToDecimal(string Dato, decimal ValorDefecto = 0)
+        /// <param name="Numero">El numero a convertir.</param>
+        /// <param name="NumeroPorDefecto">El numero por defecto en caso que la conversion falle.</param>
+        /// <returns>TRUE = El nujmero convertido; FALSE = el numero por defecto.</returns>
+        public static decimal StringToDecimal(string Numero, decimal NumeroPorDefecto = 0)
         {
-            decimal TempDecimal = 0;
-            if(decimal.TryParse(Dato, out TempDecimal))
-            {
-                return decimal.Parse(Dato);
-            }
-            return ValorDefecto;
+            decimal DecTemp;
+            decimal Resp = decimal.TryParse(Numero, out DecTemp)
+                ? decimal.Parse(Numero)
+                : NumeroPorDefecto;
+            return Resp;
+        }
+        /// <summary>
+        /// Metodo que permite convertir un string a DateTime.
+        /// </summary>
+        /// <param name="FechaStr">La fecha en string.</param>
+        /// <param name="FechaPorDefecto">La fecha por defecto en caso que la conversion falle.</param>
+        /// <returns>TRUE = La fecha convertida; FALSE = La fecha por defecto.</returns>
+        public static DateTime? ConvertirStringADateTime(string FechaStr, DateTime? FechaPorDefecto = null)
+        {
+            DateTime DatTemp;
+            DateTime? Resp = DateTime.TryParse(FechaStr, out DatTemp)
+                ? DateTime.Parse(FechaStr)
+                : FechaPorDefecto;
+            return Resp;
+        }
+        /// <summary>
+        /// Metodo que permite convertir un string a double.
+        /// </summary>
+        /// <param name="Numero">El numero a convertir.</param>
+        /// <param name="NumeroPorDefecto">El numero por defecto en caso que la conversion falle.</param>
+        /// <returns>TRUE = El nujmero convertido; FALSE = el numero por defecto.</returns>
+        public static double ConvertirStringADouble(string Numero, double NumeroPorDefecto = 0)
+        {
+            double TempDouble;
+            double Resp = double.TryParse(Numero, out TempDouble)
+                ? double.Parse(Numero)
+                : NumeroPorDefecto;
+            return Resp;
         }
     }
 }

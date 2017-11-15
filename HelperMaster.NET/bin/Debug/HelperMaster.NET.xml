@@ -1,0 +1,220 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>HelperMaster.NET</name>
+    </assembly>
+    <members>
+        <member name="T:HelperMaster.NET.DTO.DatoComboBox">
+            <summary>
+            Clase que define la estructura de ComboBox o DropDownList utilizados.
+            </summary>
+        </member>
+        <member name="P:HelperMaster.NET.DTO.DatoComboBox.nombreOpcion">
+            <summary>
+            Atributo que guarda o establece la descripcion de la opcion.
+            </summary>
+        </member>
+        <member name="P:HelperMaster.NET.DTO.DatoComboBox.numeroOpcion">
+            <summary>
+            Atributo que guarda o establece la ID de opcion.
+            </summary>
+        </member>
+        <member name="P:HelperMaster.NET.DTO.DatoComboBox.esSeleccionado">
+            <summary>
+            Atributo que guarda o establece si la opcion es seleccionada o no.
+            </summary>
+        </member>
+        <member name="M:HelperMaster.NET.DTO.DatoComboBox.#ctor">
+            <summary>
+            Metodo constructor que inicializa el objeto.
+            </summary>
+        </member>
+        <member name="M:HelperMaster.NET.DTO.DatoComboBox.#ctor(System.String,System.String,System.Boolean)">
+            <summary>
+            Metodo constructor que inicializa el objeto.
+            </summary>
+            <param name="nombreOpcion">La descripcion de la opcion.</param>
+            <param name="numeroOpcion">La ID de opcion.</param>
+            <param name="esSeleccionado">TRUE = esta seleccionado; FALSE = no lo esta.</param>
+        </member>
+        <member name="M:HelperMaster.NET.DTO.DatoComboBox.SeleccionarElemento(System.Collections.Generic.List{HelperMaster.NET.DTO.DatoComboBox},System.String)">
+            <summary>
+            Metodo que permite seleccionar un elemento especificado en la lista.
+            </summary>
+            <param name="ListaElementos">La lista de todos los elementos.</param>
+            <param name="numeroOpcion">La ID del elemento seleccionado.</param>
+            <returns>La lista de elementos con el elemento seleccionado.</returns>
+        </member>
+        <member name="M:HelperMaster.NET.DTO.DatoComboBox.SeleccionarElemento(System.Collections.Generic.List{HelperMaster.NET.DTO.DatoComboBox})">
+            <summary>
+            Metodo que permite no dejarseleccionado ningun elemento especificado en la lista.
+            </summary>
+            <param name="ListaElementos">La lista de todos los elementos.</param>
+            <returns>La lista de elementos.</returns>
+        </member>
+        <member name="T:HelperMaster.NET.DTO.Respuesta`1">
+            <summary>
+            Clase que permite estandarizar una respuesta del sistema interno.
+            </summary>
+            <typeparam name="T">Clase generica que acepta la estructura de datos necesitado en ese momento.</typeparam>
+        </member>
+        <member name="P:HelperMaster.NET.DTO.Respuesta`1.decision">
+            <summary>
+            Atributo que guarda o establece si la respuesta de la operacion es exitosa (TRUE) o si es fallido (FALSE).
+            </summary>
+        </member>
+        <member name="P:HelperMaster.NET.DTO.Respuesta`1.mensaje">
+            <summary>
+            Atributo que guarda o establece el mensaje de justificacion de la decision tomada.
+            </summary>
+        </member>
+        <member name="P:HelperMaster.NET.DTO.Respuesta`1.mensajeDetalle">
+            <summary>
+            Atributo que guarda o establece el mensaje que detalla al mensaje de justificacion tomada.
+            </summary>
+        </member>
+        <member name="P:HelperMaster.NET.DTO.Respuesta`1.estructuraDatos">
+            <summary>
+            Atributo que guarda o establece la estructura de datos que se necesita retornar.
+            </summary>
+        </member>
+        <member name="P:HelperMaster.NET.DTO.Respuesta`1.TipoRespuesta">
+            <summary>
+            Atributo que guarda o establece el tipo de respuesta devuelto.
+            </summary>
+        </member>
+        <member name="P:HelperMaster.NET.DTO.Respuesta`1.SubRespuesta">
+            <summary>
+            Atributo que guarda o establece la respuesta encapsulada.
+            </summary>
+        </member>
+        <member name="M:HelperMaster.NET.DTO.Respuesta`1.MensajeGenerico">
+            <summary>
+            Metodo que permite obtener un mensaje generico para ser mostrado hacia la capa de presentacion.
+            </summary>
+            <returns>Los datos genericos de error del sistema.</returns>
+        </member>
+        <member name="M:HelperMaster.NET.DTO.Respuesta`1.CapturarDatos">
+            <summary>
+            Metodo que permite capturar los datos de respuesta de forma ordenada.
+            </summary>
+            <returns>Los datos solicitados.</returns>
+        </member>
+        <member name="M:HelperMaster.NET.DTO.Respuesta`1.MensajeGenerico(HelperMaster.NET.DTO.SubRespuesta)">
+            <summary>
+            Metodo que permite obtener un mensaje generico para ser mostrado hacia la capa de presentacion.
+            </summary>
+            <returns>Los datos genericos de error del sistema.</returns>
+        </member>
+        <member name="T:HelperMaster.NET.DTO.SubRespuesta">
+            <summary>
+            Clase que permite desacoplar los datos semanticos de respuesta, 
+            para ser tranferidos entre capas.
+            </summary>
+        </member>
+        <member name="P:HelperMaster.NET.DTO.SubRespuesta.decision">
+            <summary>
+            Atributo que guarda o establece si la respuesta de la operacion es exitosa (TRUE) o si es fallido (FALSE).
+            </summary>
+        </member>
+        <member name="P:HelperMaster.NET.DTO.SubRespuesta.mensaje">
+            <summary>
+            Atributo que guarda o establece el mensaje de justificacion de la decision tomada.
+            </summary>
+        </member>
+        <member name="P:HelperMaster.NET.DTO.SubRespuesta.mensajeDetalle">
+            <summary>
+            Atributo que guarda o establece el mensaje que detalla al mensaje de justificacion tomada.
+            </summary>
+        </member>
+        <member name="P:HelperMaster.NET.DTO.SubRespuesta.TipoRespuesta">
+            <summary>
+            Atributo que guarda o establece el tipo de respuesta devuelto.
+            </summary>
+        </member>
+        <member name="T:HelperMaster.NET.Enum.TipoRespuesta">
+            <summary>
+            Enumeracion que permite clasificar una respuesta del sistema interno.
+            </summary>
+        </member>
+        <member name="F:HelperMaster.NET.Enum.TipoRespuesta.Desconocido">
+            <summary>
+            Desconocido.
+            </summary>
+        </member>
+        <member name="F:HelperMaster.NET.Enum.TipoRespuesta.CorrectoNegocio">
+            <summary>
+            Respuesta correcta o que el proceso ha dado una decision verdadera del negocio.
+            </summary>
+        </member>
+        <member name="F:HelperMaster.NET.Enum.TipoRespuesta.AdvReglaNegocio">
+            <summary>
+            Respuesta correcta con una pequeña advertencia en el flujo de negocioque debe ser subsanado por el usuario a la brevedad posible.
+            </summary>
+        </member>
+        <member name="F:HelperMaster.NET.Enum.TipoRespuesta.CorrectoTecnico">
+            <summary>
+            Respuesta correcta o que el proceso tecnico ha funcionado correctamente.
+            </summary>
+        </member>
+        <member name="F:HelperMaster.NET.Enum.TipoRespuesta.ErrorReglaNegocio">
+            <summary>
+            Respuesta de error cuando no se ha cumplido una regla de negocio especifica.
+            </summary>
+        </member>
+        <member name="F:HelperMaster.NET.Enum.TipoRespuesta.ErrorTecnico">
+            <summary>
+            Respuesta de error cuando ha dado un error tecnico de TRY CATCH.
+            </summary>
+        </member>
+        <member name="F:HelperMaster.NET.Enum.TipoRespuesta.Informacion">
+            <summary>
+            Respuesta de caracter informativo para el usuario.
+            </summary>
+        </member>
+        <member name="T:HelperMaster.NET.General.Conversion">
+            <summary>
+            Clase que define los métodos de conversión de datos complementarios a los que 
+            trae .NET Framework.
+            </summary>
+        </member>
+        <member name="M:HelperMaster.NET.General.Conversion.StringToDecimal(System.String,System.Decimal)">
+            <summary>
+            Metodo que permite convertir un string a decimal.
+            </summary>
+            <param name="Numero">El numero a convertir.</param>
+            <param name="NumeroPorDefecto">El numero por defecto en caso que la conversion falle.</param>
+            <returns>TRUE = El nujmero convertido; FALSE = el numero por defecto.</returns>
+        </member>
+        <member name="M:HelperMaster.NET.General.Conversion.ConvertirStringADateTime(System.String,System.Nullable{System.DateTime})">
+            <summary>
+            Metodo que permite convertir un string a DateTime.
+            </summary>
+            <param name="FechaStr">La fecha en string.</param>
+            <param name="FechaPorDefecto">La fecha por defecto en caso que la conversion falle.</param>
+            <returns>TRUE = La fecha convertida; FALSE = La fecha por defecto.</returns>
+        </member>
+        <member name="M:HelperMaster.NET.General.Conversion.ConvertirStringADouble(System.String,System.Double)">
+            <summary>
+            Metodo que permite convertir un string a double.
+            </summary>
+            <param name="Numero">El numero a convertir.</param>
+            <param name="NumeroPorDefecto">El numero por defecto en caso que la conversion falle.</param>
+            <returns>TRUE = El nujmero convertido; FALSE = el numero por defecto.</returns>
+        </member>
+        <member name="T:HelperMaster.NET.WindowsForms.Helper">
+            <summary>
+            Clase de ayudante orientado al arquetipo WINDOWS FORMS.
+            </summary>
+        </member>
+        <member name="M:HelperMaster.NET.WindowsForms.Helper.ObtenerLista(System.Windows.Forms.ComboBox)">
+            <summary>
+            Metodo estatico que permite realizar una conversion desde un control ComboBox hacia una lista generica equivalente. 
+            NOTA: Este funciona a cualquier tipo de tipificacion de la ID del item seleccionado, es decir, 
+            perfectamente la ID puede ser de tipo string.
+            </summary>
+            <param name="Datos">Datos que contiene un control ComboBox de Windows Forms.</param>
+            <returns>Los datos convertidos en una lista generica.</returns>
+        </member>
+    </members>
+</doc>
