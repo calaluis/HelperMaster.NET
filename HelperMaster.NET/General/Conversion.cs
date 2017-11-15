@@ -18,7 +18,7 @@ namespace HelperMaster.NET.General
         /// <param name="Dato">El dato de tipo string a convertir.</param>
         /// <param name="ValorDefecto">El valor por defecto en caso que la conversión falle. 
         /// Por defecto es cero.</param>
-        /// <returns></returns>
+        /// <returns>El valor convertido.</returns>
         public static decimal StringToDecimal(string Dato, decimal ValorDefecto = 0)
         {
             decimal TempDecimal = 0;
