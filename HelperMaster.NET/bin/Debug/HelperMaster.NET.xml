@@ -375,6 +375,16 @@
             Clase que permite complementar Helpers de los ya existentes hacia la vista.
             </summary>
         </member>
+        <member name="F:HelperMaster.NET.MVC.HtmlHelperMVC._Reporte">
+            <summary>
+            Campo oculto que guarda el objeto de reporte.
+            </summary>
+        </member>
+        <member name="P:HelperMaster.NET.MVC.HtmlHelperMVC.Reporte">
+            <summary>
+            Atributo interno que guarda o establece el objeto de reporte.
+            </summary>
+        </member>
         <member name="M:HelperMaster.NET.MVC.HtmlHelperMVC.DivFor``1(System.Web.Mvc.HtmlHelper{``0},System.Linq.Expressions.Expression{System.Func{``0,HelperMaster.NET.DTO.Div}},System.Web.Mvc.MvcHtmlString,System.Object)">
             <summary>
             Método Helper que permite utilizar el tag DIV de forma automatizada dentro de un ViewModel.
@@ -415,6 +425,31 @@
             <param name="helper">El Helper de MVC (tomado de forma implícita).</param>
             <param name="expression">La expresión Linq, refiriéndose a un elemento del modelo.</param>
             <returns>El tag INPUT tipo CHECKBOX construido.</returns>
+        </member>
+        <member name="M:HelperMaster.NET.MVC.HtmlHelperMVC.VisorReporte(System.Web.Mvc.HtmlHelper,Microsoft.Reporting.WebForms.ReportViewer)">
+            <summary>
+            Método Helper que permite mostrar un reporte específico en pantalla.
+            </summary>
+            <param name="helper">El Helper de MVC (tomado de forma implícita).</param>
+            <param name="Reporte">El objeto de Reporte.</param>
+            <returns>El reporte procesado para ser mostrado en pantalla.</returns>
+        </member>
+        <member name="M:HelperMaster.NET.MVC.HtmlHelperMVC.VisorReporte(System.Web.Mvc.HtmlHelper,Microsoft.Reporting.WebForms.ReportViewer,System.Object)">
+            <summary>
+            Método Helper que permite mostrar un reporte específico en pantalla.
+            </summary>
+            <param name="helper">El Helper de MVC (tomado de forma implícita).</param>
+            <param name="Reporte">El objeto de Reporte.</param>
+            <param name="AtributosHTML">Los atributos HTML del TAG IFRAME.</param>
+            <returns>El reporte procesado para ser mostrado en pantalla.</returns>
+        </member>
+        <member name="M:HelperMaster.NET.MVC.HtmlHelperMVC.ObtenerMarco(Microsoft.Reporting.WebForms.ReportViewer,System.Object)">
+            <summary>
+            Método que permite definir el marco (IFRAME) para la reportería.
+            </summary>
+            <param name="Reporte">El objeto de Reporte.</param>
+            <param name="AtributosHTML">Los atributos HTML del IFRAME.</param>
+            <returns>El IFRAME procesado.</returns>
         </member>
         <member name="T:HelperMaster.NET.WindowsForms.HelperWindowsForms">
             <summary>
@@ -482,6 +517,20 @@
             </summary>
             <param name="NombreArchivo">El nombre del archivo a obtener dentro del ensamblado.</param>
             <returns>TRUE = La ruta fisica del archivo rescatado; FALSE = El archivo no fue encontrado dentro del ensamblado.</returns>
+        </member>
+        <member name="T:SqlServerTypes.Utilities">
+            <summary>
+            Utility methods related to CLR Types for SQL Server 
+            </summary>
+        </member>
+        <member name="M:SqlServerTypes.Utilities.LoadNativeAssemblies(System.String)">
+            <summary>
+            Loads the required native assemblies for the current architecture (x86 or x64)
+            </summary>
+            <param name="rootApplicationPath">
+            Root path of the current application. Use Server.MapPath(".") for ASP.NET applications
+            and AppDomain.CurrentDomain.BaseDirectory for desktop applications.
+            </param>
         </member>
     </members>
 </doc>

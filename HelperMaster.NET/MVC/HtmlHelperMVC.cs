@@ -2,11 +2,13 @@
 using HelperMaster.NET.DTO;
 using HelperMaster.NET.Enum;
 using HelperMaster.NET.General;
+using Microsoft.Reporting.WebForms;
 using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Linq.Expressions;
+using System.Web;
 using System.Web.Mvc;
 
 namespace HelperMaster.NET.MVC
@@ -16,6 +18,26 @@ namespace HelperMaster.NET.MVC
     /// </summary>
     public static class HtmlHelperMVC
     {
+        /// <summary>
+        /// Campo oculto que guarda el objeto de reporte.
+        /// </summary>
+        private static ReportViewer _Reporte;
+        /// <summary>
+        /// Atributo interno que guarda o establece el objeto de reporte.
+        /// </summary>
+        internal static ReportViewer Reporte
+        {
+            get
+            {
+                return _Reporte;
+            }
+            set
+            {
+                _Reporte = value;
+                _Reporte.ID = "ReporteTemporal";
+            }
+        }
+
         /// <summary>
         /// Método Helper que permite utilizar el tag DIV de forma automatizada dentro de un ViewModel.
         /// </summary>
@@ -163,6 +185,75 @@ namespace HelperMaster.NET.MVC
             }
 
             return new MvcHtmlString(ChkBox.ToString(TagRenderMode.SelfClosing) + char.ConvertFromUtf32(13) + ChkBoxScript.ToString());
+        }
+        /// <summary>
+        /// Método Helper que permite mostrar un reporte específico en pantalla.
+        /// </summary>
+        /// <param name="helper">El Helper de MVC (tomado de forma implícita).</param>
+        /// <param name="Reporte">El objeto de Reporte.</param>
+        /// <returns>El reporte procesado para ser mostrado en pantalla.</returns>
+        public static MvcHtmlString VisorReporte(this HtmlHelper helper, ReportViewer Reporte)
+        {
+            return ObtenerMarco(Reporte, null);
+        }
+        /// <summary>
+        /// Método Helper que permite mostrar un reporte específico en pantalla.
+        /// </summary>
+        /// <param name="helper">El Helper de MVC (tomado de forma implícita).</param>
+        /// <param name="Reporte">El objeto de Reporte.</param>
+        /// <param name="AtributosHTML">Los atributos HTML del TAG IFRAME.</param>
+        /// <returns>El reporte procesado para ser mostrado en pantalla.</returns>
+        public static MvcHtmlString VisorReporte(this HtmlHelper helper, ReportViewer Reporte, object AtributosHTML)
+        {
+            return ObtenerMarco(Reporte, AtributosHTML);
+        }
+        /// <summary>
+        /// Método que permite definir el marco (IFRAME) para la reportería.
+        /// </summary>
+        /// <param name="Reporte">El objeto de Reporte.</param>
+        /// <param name="AtributosHTML">Los atributos HTML del IFRAME.</param>
+        /// <returns>El IFRAME procesado.</returns>
+        private static MvcHtmlString ObtenerMarco(ReportViewer Reporte, object AtributosHTML)
+        {
+            if (Reporte == null)
+            {
+                throw new ArgumentNullException("Reporte", "El reporte no puede venir nulo.");
+            }
+
+            HtmlHelperMVC.Reporte = Reporte;
+            IDictionary<string, object> AtributosHTMLParseados = HtmlHelper.AnonymousObjectToHtmlAttributes(AtributosHTML);
+
+            #region Obtener ID del Marco.
+
+            string MarcoID = string.Empty;
+
+            if (AtributosHTMLParseados["id"] == null)
+            {
+                MarcoID = "r" + Guid.NewGuid().ToString();
+            }
+            else
+            {
+                MarcoID = TagBuilder.CreateSanitizedId(AtributosHTMLParseados["id"].ToString());
+                if (string.IsNullOrEmpty(MarcoID))
+                {
+                    throw new ArgumentNullException("AtributosHTMLParseados.id", "El valor no puede ser nulo o vacío.");
+                }
+            }
+
+            #endregion
+
+            #region Crear el TAG del Marco.
+
+            string RutaAplicacion = (HttpContext.Current.Request.ApplicationPath == "/") ? "" : HttpContext.Current.Request.ApplicationPath;
+            TagBuilder ConstructorTAG = new TagBuilder("iframe");
+            ConstructorTAG.GenerateId(MarcoID);
+            ConstructorTAG.MergeAttribute("src", RutaAplicacion + "/ReportTemp/VisorReporteTemporal.aspx");
+            ConstructorTAG.MergeAttributes(AtributosHTMLParseados, false);
+            ConstructorTAG.SetInnerText("iframes no soportado.");
+
+            #endregion
+
+            return new MvcHtmlString(ConstructorTAG.ToString());
         }
     }
 }
