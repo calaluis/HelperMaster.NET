@@ -129,6 +129,7 @@ F:\GitHub\HelperMaster.NET\HelperMaster.NET\bin\Debug\zh-CHT\Microsoft.ReportVie
 F:\GitHub\HelperMaster.NET\HelperMaster.NET\bin\Debug\es\System.Web.Mvc.resources.dll
 F:\GitHub\HelperMaster.NET\HelperMaster.NET\bin\Debug\es\Microsoft.VisualStudio.Data.Services.resources.dll
 F:\GitHub\HelperMaster.NET\HelperMaster.NET\bin\Debug\es\Microsoft.VisualStudio.Data.Core.resources.dll
+F:\GitHub\HelperMaster.NET\HelperMaster.NET\obj\Debug\HelperMaster.NET.csprojResolveAssemblyReference.cache
 F:\GitHub\HelperMaster.NET\HelperMaster.NET\obj\Debug\HelperMaster.NET.csproj.CoreCompileInputs.cache
 F:\GitHub\HelperMaster.NET\HelperMaster.NET\obj\Debug\HelperMaster.NET.dll
 F:\GitHub\HelperMaster.NET\HelperMaster.NET\obj\Debug\HelperMaster.NET.pdb

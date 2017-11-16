@@ -23,9 +23,9 @@ namespace HelperMaster.NET.MVC
         /// </summary>
         private static ReportViewer _Reporte;
         /// <summary>
-        /// Atributo interno que guarda o establece el objeto de reporte.
+        /// Atributo que guarda o establece el objeto de reporte.
         /// </summary>
-        internal static ReportViewer Reporte
+        public static ReportViewer Reporte
         {
             get
             {

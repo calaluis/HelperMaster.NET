@@ -382,7 +382,7 @@
         </member>
         <member name="P:HelperMaster.NET.MVC.HtmlHelperMVC.Reporte">
             <summary>
-            Atributo interno que guarda o establece el objeto de reporte.
+            Atributo que guarda o establece el objeto de reporte.
             </summary>
         </member>
         <member name="M:HelperMaster.NET.MVC.HtmlHelperMVC.DivFor``1(System.Web.Mvc.HtmlHelper{``0},System.Linq.Expressions.Expression{System.Func{``0,HelperMaster.NET.DTO.Div}},System.Web.Mvc.MvcHtmlString,System.Object)">
