@@ -29,6 +29,10 @@ namespace HelperMaster.NET.MVC
         {
             get
             {
+                if (_Reporte == null)
+                {
+                    _Reporte = new ReportViewer();
+                }
                 return _Reporte;
             }
             set
