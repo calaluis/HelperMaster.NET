@@ -269,7 +269,23 @@
             </summary>
             <param name="Numero">El numero a convertir.</param>
             <param name="NumeroPorDefecto">El numero por defecto en caso que la conversion falle.</param>
-            <returns>TRUE = El nujmero convertido; FALSE = el numero por defecto.</returns>
+            <returns>TRUE = El número convertido; FALSE = el numero por defecto.</returns>
+        </member>
+        <member name="M:HelperMaster.NET.General.Conversion.StringToInt32(System.String,System.Int32)">
+            <summary>
+            Metodo que permite convertir un string a int de 32 bits.
+            </summary>
+            <param name="Numero">El numero a convertir.</param>
+            <param name="NumeroPorDefecto">El numero por defecto en caso que la conversion falle.</param>
+            <returns>TRUE = El número convertido; FALSE = el numero por defecto.</returns>
+        </member>
+        <member name="M:HelperMaster.NET.General.Conversion.StringToInt64(System.String,System.Int64)">
+            <summary>
+            Metodo que permite convertir un string a int de 64 bits.
+            </summary>
+            <param name="Numero">El numero a convertir.</param>
+            <param name="NumeroPorDefecto">El numero por defecto en caso que la conversion falle.</param>
+            <returns>TRUE = El número convertido; FALSE = el numero por defecto.</returns>
         </member>
         <member name="M:HelperMaster.NET.General.Conversion.StringToDateTime(System.String,System.Nullable{System.DateTime})">
             <summary>
@@ -285,7 +301,7 @@
             </summary>
             <param name="Numero">El numero a convertir.</param>
             <param name="NumeroPorDefecto">El numero por defecto en caso que la conversion falle.</param>
-            <returns>TRUE = El nujmero convertido; FALSE = el numero por defecto.</returns>
+            <returns>TRUE = El número convertido; FALSE = el numero por defecto.</returns>
         </member>
         <member name="M:HelperMaster.NET.General.Conversion.ListOfStringToString(System.Collections.Generic.List{System.String},System.String)">
             <summary>
@@ -318,6 +334,213 @@
             <param name="Filas">Las filas del arreglo.</param>
             <param name="Columnas">Las columnas del arreglo.</param>
             <returns>El arreglo de dos dimensiones.</returns>
+        </member>
+        <member name="T:HelperMaster.NET.General.DataTableX">
+            <summary>
+            Clase que permite el mapeo dinámico de una tupla de objeto DataTable hacia otro 
+            objeto de forma optimizada, utilizado en ADO.NET.
+            </summary>
+        </member>
+        <member name="M:HelperMaster.NET.General.DataTableX.AsDynamicEnumerable(System.Data.DataTable)">
+            <summary>
+            Metodo que permite convertir un DataTable a un objeto dinamico.
+            </summary>
+            <param name="table">El DataTable a procesar.</param>
+            <returns>La tupla dinamica.</returns>
+        </member>
+        <member name="M:HelperMaster.NET.General.DataTableX.ExisteCampo(System.Object,System.String)">
+            <summary>
+            Metodo que permite saber, si el campo a ser mostrado existe o no.
+            </summary>
+            <param name="Estructura">La estructura de la tupla obtenida.</param>
+            <param name="NombreCampo">El nombre del campo.</param>
+            <returns>TRUE = Existe el campo; FALSE = No existe.</returns>
+        </member>
+        <member name="M:HelperMaster.NET.General.DataTableX.ExisteCampoConDatos(System.Object,System.String)">
+            <summary>
+            Metodo que permite saber, si el campo a ser mostrado existe o no, y tambien si tiene datos.
+            </summary>
+            <param name="Estructura">La estructura de la tupla obtenida.</param>
+            <param name="NombreCampo">El nombre del campo.</param>
+            <returns>TRUE = Existe el campo; FALSE = No existe.</returns>
+        </member>
+        <member name="M:HelperMaster.NET.General.DataTableX.ObtenerTipificacion(System.Object,System.String,System.Type)">
+            <summary>
+            Metodo que permite obtener el dato tipificado.
+            </summary>
+            <param name="Estructura">La estructura de la tupla obtenida.</param>
+            <param name="NombreCampo">El nombre del campo.</param>
+            <param name="Tipificacion">La tipificacion final deseada. 
+            Si no se sabe la tipifacion de origen, debe poner DBNull.Value.GetType(), 
+            para lo cual, el sistema lo tomara como string.</param>
+            <returns>TRUE = El dato tipificado; FALSE = El dato seteado como vacio y sin significado alguno para el negocio.</returns>
+        </member>
+        <member name="M:HelperMaster.NET.General.DataTableX.ObtenerListaColumnas(System.Data.DataTable)">
+            <summary>
+            Metodo que permite obtener los nombres de columnas de una tupla.
+            </summary>
+            <param name="Datos">La tupla llenada.</param>
+            <returns>La lista de columnas con sus tipificaciones.</returns>
+        </member>
+        <member name="T:HelperMaster.NET.General.PaginacionEnVolumenes`1">
+            <summary>
+            Clase que permite gestionar los valores al momento de realizar 
+            una paginación de una consulta a la base de datos. Este tipo de paginación 
+            es muy parecido, cuando se quiera particiionar un set de datos en partes (split).
+            </summary>
+        </member>
+        <member name="P:HelperMaster.NET.General.PaginacionEnVolumenes`1.Tupla">
+            <summary>
+            Atributo que guarda o establece el resultado de la consulta.
+            </summary>
+        </member>
+        <member name="P:HelperMaster.NET.General.PaginacionEnVolumenes`1.NumeroPagina">
+            <summary>
+            Atributo que guarda o establece el número de página.
+            </summary>
+        </member>
+        <member name="P:HelperMaster.NET.General.PaginacionEnVolumenes`1.NumeroPaginas">
+            <summary>
+            Atributo que guarda o establece el número de páginas que tiene el resultado.
+            </summary>
+        </member>
+        <member name="P:HelperMaster.NET.General.PaginacionEnVolumenes`1.FilasPorPagina">
+            <summary>
+            Atributo que guarda o establece la cantidad de filas por página.
+            </summary>
+        </member>
+        <member name="P:HelperMaster.NET.General.PaginacionEnVolumenes`1.EsPaginaAnterior">
+            <summary>
+            Atributo que guarda o establece si hay o no una página anterior.
+            </summary>
+        </member>
+        <member name="P:HelperMaster.NET.General.PaginacionEnVolumenes`1.EsPaginaSiguiente">
+            <summary>
+            Atributo que guarda o establece si hay o no una página siguiente.
+            </summary>
+        </member>
+        <member name="P:HelperMaster.NET.General.PaginacionEnVolumenes`1.EsUltimaPagina">
+            <summary>
+            Atributo que guarda o establece si la páfgina actual es la última página.
+            </summary>
+        </member>
+        <member name="M:HelperMaster.NET.General.PaginacionEnVolumenes`1.#ctor(System.Int32,System.Int32)">
+            <summary>
+            Método Constructor que permite inicializar los parámetros necesarios para realizar paginación.
+            </summary>
+            <param name="NumeroPagina">Número de página.</param>
+            <param name="FilasPorPagina">Filas por página.</param>
+        </member>
+        <member name="M:HelperMaster.NET.General.PaginacionEnVolumenes`1.RealizarPaginacion(HelperMaster.NET.General.PaginacionEnVolumenes{`0})">
+            <summary>
+            Método que permite aplicar paginación a una tupla genérica.
+            </summary>
+            <param name="DatosTupla">La información de los datos a paginar.</param>
+            <returns>La información procesada y paginada.</returns>
+        </member>
+        <member name="M:HelperMaster.NET.General.PaginacionEnVolumenes`1.NumeroDePaginas(System.Collections.Generic.List{`0},System.Int32)">
+            <summary>
+            Método que permite obtener el número de páginas total de una tupla de lista genérica.
+            </summary>
+            <param name="DatosTupla">Los datos de la tupla a procesar.</param>
+            <param name="FilasPorPagina">la cantidad de filas por página.</param>
+            <returns>El número de páginas total.</returns>
+        </member>
+        <member name="T:HelperMaster.NET.General.PaginacionTupla">
+            <summary>
+            Resumen: Clase que permite realizar paginación a través de un procedimiento almacenado, es decir, 
+            la paginación debe ser realizada por un procedimiento almacenado por medio de los parámetros 
+            entregados por esta clase aplicada. Para más información de su utilización, visite la página web del proyecto.
+            </summary>
+        </member>
+        <member name="P:HelperMaster.NET.General.PaginacionTupla.Nro_Filas">
+            <summary>
+            Obtiene o establece el numero de filas obtenidas desde la BD.
+            </summary>
+        </member>
+        <member name="P:HelperMaster.NET.General.PaginacionTupla.Nro_Filas_Por_Pagina">
+            <summary>
+            Obtiene o establece el numero de filas por pagina.
+            </summary>
+        </member>
+        <member name="P:HelperMaster.NET.General.PaginacionTupla.Nro_Pag">
+            <summary>
+            Obtiene o establece el numero de pagina mostrada.
+            </summary>
+        </member>
+        <member name="P:HelperMaster.NET.General.PaginacionTupla.Paginas_Total">
+            <summary>
+            Obtiene o establece el numero de paginas totales con respecto al numero de filas.
+            </summary>
+        </member>
+        <member name="P:HelperMaster.NET.General.PaginacionTupla.Resto_Filas">
+            <summary>
+            Obtiene o establece la cantidad de filas minoritarias que es menor al nro. de filas por pagina.
+            </summary>
+        </member>
+        <member name="P:HelperMaster.NET.General.PaginacionTupla.Pag_Ini">
+            <summary>
+            Obtiene o establece la representacion de la fila inicial al delimitar la tupla.
+            </summary>
+        </member>
+        <member name="P:HelperMaster.NET.General.PaginacionTupla.Pag_Fin">
+            <summary>
+            Obtiene o establece la representacion de la fila final al delimitar la tupla.
+            </summary>
+        </member>
+        <member name="P:HelperMaster.NET.General.PaginacionTupla.Numero_De_Pagina">
+            <summary>
+            Obtiene o establece el numero de pagina ingresada por el usuario.
+            </summary>
+        </member>
+        <member name="M:HelperMaster.NET.General.PaginacionTupla.CalculoPaginacion(HelperMaster.NET.General.PaginacionTupla)">
+            <summary>
+            Metodo que realiza el calculo de la paginacion.
+            </summary>
+            <param name="Pag">Los datos a paginar.</param>
+            <returns>El calculo con los resultados en los datos cambiados.</returns>
+        </member>
+        <member name="M:HelperMaster.NET.General.PaginacionTupla.ConsultaPaginacion(HelperMaster.NET.General.PaginacionTupla)">
+            <summary>
+            Metodo que permite realizar la consulta en forma paginada.
+            </summary>
+            <param name="Pag">Los valores necesarios para realizar la paginacion.</param>
+            <returns>Los valores para paginar.</returns>
+        </member>
+        <member name="M:HelperMaster.NET.General.PaginacionTupla.IndicePrimero(HelperMaster.NET.General.PaginacionTupla)">
+            <summary>
+            Metodo que permite obtener la primera pagina de la tupla.
+            </summary>
+            <param name="Pag">Los datos necesarios a paginar.</param>
+            <returns>Los valores para establecer la primera pagina.</returns>
+        </member>
+        <member name="M:HelperMaster.NET.General.PaginacionTupla.IndiceAnterior(HelperMaster.NET.General.PaginacionTupla)">
+            <summary>
+            Metodo que permite obtener la pagina anterior de toda la tupla.
+            </summary>
+            <param name="Pag">Los datos necesarios para paginar.</param>
+            <returns>Los valores para establecer la pagina anterior.</returns>
+        </member>
+        <member name="M:HelperMaster.NET.General.PaginacionTupla.NumeroPagina(HelperMaster.NET.General.PaginacionTupla)">
+            <summary>
+            Metodo que permite obtener la pagina elegida por el usuario.
+            </summary>
+            <param name="Pag">Los datos necesarios para paginar.</param>
+            <returns>Los valores para establecer la pagina elegida por el usuario.</returns>
+        </member>
+        <member name="M:HelperMaster.NET.General.PaginacionTupla.IndicePosterior(HelperMaster.NET.General.PaginacionTupla)">
+            <summary>
+            Metodo que permite obtener la pagina siguiente de toda la tupla.
+            </summary>
+            <param name="Pag">Los datos necesarios para paginar.</param>
+            <returns>Los valores para establecer la pagina siguiente.</returns>
+        </member>
+        <member name="M:HelperMaster.NET.General.PaginacionTupla.IndiceUltimo(HelperMaster.NET.General.PaginacionTupla)">
+            <summary>
+            Metodo que permite obtener la ultima pagina de toda la tupla.
+            </summary>
+            <param name="Pag">Los datos necesarios para paginar.</param>
+            <returns>Los valores para establecer la ultima pagina.</returns>
         </member>
         <member name="T:HelperMaster.NET.MVC.HelperMVC">
             <summary>

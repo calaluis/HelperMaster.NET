@@ -137,3 +137,4 @@ F:\GitHub\HelperMaster.NET\HelperMaster.NET\obj\Debug\HelperMaster.NET.csprojRes
 F:\GitHub\HelperMaster.NET\HelperMaster.NET\obj\Debug\HelperMaster.NET.csproj.CoreCompileInputs.cache
 F:\GitHub\HelperMaster.NET\HelperMaster.NET\obj\Debug\HelperMaster.NET.dll
 F:\GitHub\HelperMaster.NET\HelperMaster.NET\obj\Debug\HelperMaster.NET.pdb
+F:\GitHub\HelperMaster.NET\HelperMaster.NET\bin\Debug\es\Microsoft.VisualStudio.GraphModel.resources.dll

@@ -103,6 +103,9 @@
     <Compile Include="Enum\EstadoCheckBox.cs" />
     <Compile Include="Enum\TipoRespuesta.cs" />
     <Compile Include="General\Conversion.cs" />
+    <Compile Include="General\DataTableX.cs" />
+    <Compile Include="General\PaginacionEnVolumenes.cs" />
+    <Compile Include="General\PaginacionTupla.cs" />
     <Compile Include="MVC\HelperMVC.cs" />
     <Compile Include="MVC\HtmlHelperMVC.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

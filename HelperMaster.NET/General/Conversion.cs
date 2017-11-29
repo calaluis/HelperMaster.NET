@@ -15,12 +15,40 @@ namespace HelperMaster.NET.General
         /// </summary>
         /// <param name="Numero">El numero a convertir.</param>
         /// <param name="NumeroPorDefecto">El numero por defecto en caso que la conversion falle.</param>
-        /// <returns>TRUE = El nujmero convertido; FALSE = el numero por defecto.</returns>
+        /// <returns>TRUE = El número convertido; FALSE = el numero por defecto.</returns>
         public static decimal StringToDecimal(string Numero, decimal NumeroPorDefecto = 0)
         {
             decimal DecTemp;
             decimal Resp = decimal.TryParse(Numero, out DecTemp)
                 ? decimal.Parse(Numero)
+                : NumeroPorDefecto;
+            return Resp;
+        }
+        /// <summary>
+        /// Metodo que permite convertir un string a int de 32 bits.
+        /// </summary>
+        /// <param name="Numero">El numero a convertir.</param>
+        /// <param name="NumeroPorDefecto">El numero por defecto en caso que la conversion falle.</param>
+        /// <returns>TRUE = El número convertido; FALSE = el numero por defecto.</returns>
+        public static int StringToInt32(string Numero, int NumeroPorDefecto = 0)
+        {
+            int IntTemp;
+            int Resp = int.TryParse(Numero, out IntTemp)
+                ? int.Parse(Numero)
+                : NumeroPorDefecto;
+            return Resp;
+        }
+        /// <summary>
+        /// Metodo que permite convertir un string a int de 64 bits.
+        /// </summary>
+        /// <param name="Numero">El numero a convertir.</param>
+        /// <param name="NumeroPorDefecto">El numero por defecto en caso que la conversion falle.</param>
+        /// <returns>TRUE = El número convertido; FALSE = el numero por defecto.</returns>
+        public static long StringToInt64(string Numero, long NumeroPorDefecto = 0)
+        {
+            long LongTemp;
+            long Resp = long.TryParse(Numero, out LongTemp)
+                ? long.Parse(Numero)
                 : NumeroPorDefecto;
             return Resp;
         }
@@ -43,7 +71,7 @@ namespace HelperMaster.NET.General
         /// </summary>
         /// <param name="Numero">El numero a convertir.</param>
         /// <param name="NumeroPorDefecto">El numero por defecto en caso que la conversion falle.</param>
-        /// <returns>TRUE = El nujmero convertido; FALSE = el numero por defecto.</returns>
+        /// <returns>TRUE = El número convertido; FALSE = el numero por defecto.</returns>
         public static double StringToDouble(string Numero, double NumeroPorDefecto = 0)
         {
             double TempDouble;
