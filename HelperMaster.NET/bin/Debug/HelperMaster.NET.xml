@@ -542,6 +542,39 @@
             <param name="Pag">Los datos necesarios para paginar.</param>
             <returns>Los valores para establecer la ultima pagina.</returns>
         </member>
+        <member name="T:HelperMaster.NET.General.PDF">
+            <summary>
+            Clase que permite realizar la conversión de una plantilla de documento iTextXML o HTML a PDF.
+            </summary>
+        </member>
+        <member name="P:HelperMaster.NET.General.PDF.PlantillaPDF">
+            <summary>
+            Atributo que guarda o establece los datos de la plantilla XML.
+            </summary>
+        </member>
+        <member name="P:HelperMaster.NET.General.PDF.ArchivoPDF">
+            <summary>
+            Atributo que guarda o establece el archivo PDF convertido.
+            </summary>
+        </member>
+        <member name="M:HelperMaster.NET.General.PDF.#ctor(System.String)">
+            <summary>
+            Método constructor que permite cargar el archivo XML en memoria, para ser manipulada.
+            </summary>
+            <param name="RutaPlantillaPDF">La ruta del archivo XML de plantilla.</param>
+        </member>
+        <member name="M:HelperMaster.NET.General.PDF.GenerarPDF">
+            <summary>
+            Método que permite realizar la conversión de XML a PDF.
+            </summary>
+        </member>
+        <member name="M:HelperMaster.NET.General.PDF.GetXmlReader(System.String)">
+            <summary>
+            Método que permite obtener una plantilla XML procesado.
+            </summary>
+            <param name="Origen">El XML en formato string.</param>
+            <returns>El XML procesado.</returns>
+        </member>
         <member name="T:HelperMaster.NET.MVC.HelperMVC">
             <summary>
             Clase de ayudante orientado al arquetipo MVC.
