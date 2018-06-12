@@ -157,11 +157,26 @@ namespace HelperMaster.NET.MVC
                 {
                     if (!string.IsNullOrEmpty(bindingContext.ValueProvider.GetValue(Valor).AttemptedValue))
                     {
-
-                        return System.Enum.Parse(Tipificacion, bindingContext.ValueProvider.GetValue(Valor).AttemptedValue);
+                        string ValorProcesado = bindingContext.ValueProvider.GetValue(Valor).AttemptedValue;
+                        if (ValorProcesado.Contains("="))
+                        {
+                            return System.Enum.Parse(Tipificacion, AES.Desencriptar(ValorProcesado));
+                        }
+                        else
+                        {
+                            return System.Enum.Parse(Tipificacion, ValorProcesado);
+                        }
                     }
                 }
                 return System.Enum.Parse(Tipificacion, "-1");
+            }
+            if (Tipificacion == typeof(MultiSelectList))
+            {
+                if (bindingContext.ValueProvider.GetValue(Valor) != null)
+                {
+                    IEnumerable<string> DatosSeleccionados = (IEnumerable<string>)bindingContext.ValueProvider.GetValue(Valor).RawValue;
+                    return DatosSeleccionados;
+                }
             }
             return null;
         }
@@ -236,6 +251,26 @@ namespace HelperMaster.NET.MVC
                 }
                 return new SelectList(Generico, "numeroOpcion", "nombreOpcion");
             }
+        }
+        /// <summary>
+        /// Método que permite parsear una lista de datos a un arreglo de datos de la interfaz usuaria 
+        /// (no incluye la opción (Seleccione Opcion)).
+        /// </summary>
+        /// <param name="Generico">La lista de datos genéricos.</param>
+        /// <returns>El arreglo de datos para la interfaz usuaria.</returns>
+        public static SelectList ToSelectListDos(List<DatoComboBox> Generico)
+        {
+            Generico.RemoveAll(o => o.nombreOpcion == "(Seleccione Opcion)");
+            return new SelectList(Generico, "numeroOpcion", "nombreOpcion", Generico.Where(o => o.esSeleccionado).Select(o => o.numeroOpcion).FirstOrDefault());
+        }
+        /// <summary>
+        /// Método que permite parsear una lista de datos genérica a una lista de caja de datos de la interfaz usuaria.
+        /// </summary>
+        /// <param name="Generico">La lista de datos genéricos.</param>
+        /// <returns>El arreglo de lista de caja de datos para la interfaz usuaria.</returns>
+        public static MultiSelectList ToMultiSelectList(List<DatoComboBox> Generico)
+        {
+            return new MultiSelectList(Generico, "numeroOpcion", "nombreOpcion", Generico.Where(o => o.esSeleccionado).Select(o => o.numeroOpcion));
         }
         /// <summary>
         /// Método que permite extraer el nombre de etiqueta de un atributo de entidad de clase específica.

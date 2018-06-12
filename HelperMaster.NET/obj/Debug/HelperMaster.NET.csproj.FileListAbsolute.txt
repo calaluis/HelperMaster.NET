@@ -135,3 +135,6 @@ F:\GitHub\HelperMaster.NET\HelperMaster.NET\obj\Debug\HelperMaster.NET.dll
 F:\GitHub\HelperMaster.NET\HelperMaster.NET\obj\Debug\HelperMaster.NET.pdb
 F:\GitHub\HelperMaster.NET\HelperMaster.NET\bin\Debug\es\Microsoft.VisualStudio.GraphModel.resources.dll
 F:\GitHub\HelperMaster.NET\HelperMaster.NET\bin\Debug\iTextSharp.dll
+F:\GitHub\HelperMaster.NET\HelperMaster.NET\bin\Debug\itextsharp.xmlworker.dll
+F:\GitHub\HelperMaster.NET\HelperMaster.NET\bin\Debug\itextsharp.xml
+F:\GitHub\HelperMaster.NET\HelperMaster.NET\obj\Debug\HelperMaster.NET.csproj.CopyComplete

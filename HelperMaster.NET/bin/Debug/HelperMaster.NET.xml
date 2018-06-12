@@ -335,6 +335,11 @@
             <param name="Columnas">Las columnas del arreglo.</param>
             <returns>El arreglo de dos dimensiones.</returns>
         </member>
+        <member name="T:HelperMaster.NET.General.CustomImageTagProcessor">
+            <summary>
+            Clase que permite modificar el procesador de imágenes en base 64.
+            </summary>
+        </member>
         <member name="T:HelperMaster.NET.General.DataTableX">
             <summary>
             Clase que permite el mapeo dinámico de una tupla de objeto DataTable hacia otro 
@@ -544,7 +549,7 @@
         </member>
         <member name="T:HelperMaster.NET.General.PDF">
             <summary>
-            Clase que permite realizar la conversión de una plantilla de documento iTextXML o HTML a PDF.
+            Clase que permite realizar la conversión de una plantilla de documento HTML a PDF.
             </summary>
         </member>
         <member name="P:HelperMaster.NET.General.PDF.PlantillaPDF">
@@ -563,17 +568,22 @@
             </summary>
             <param name="RutaPlantillaPDF">La ruta del archivo XML de plantilla.</param>
         </member>
+        <member name="M:HelperMaster.NET.General.PDF.#ctor(System.Byte[])">
+            <summary>
+            Método constructor que permite cargar el archivo XML en memoria, para ser manipulada.
+            </summary>
+            <param name="PlantillaBinario">El archivo binario de la plantilla.</param>
+        </member>
         <member name="M:HelperMaster.NET.General.PDF.GenerarPDF">
             <summary>
             Método que permite realizar la conversión de XML a PDF.
             </summary>
         </member>
-        <member name="M:HelperMaster.NET.General.PDF.GetXmlReader(System.String)">
+        <member name="M:HelperMaster.NET.General.PDF.GenerarPDF(System.Collections.Generic.List{System.String})">
             <summary>
-            Método que permite obtener una plantilla XML procesado.
+            Método que permite realizar la conversión de HTML a PDF.
             </summary>
-            <param name="Origen">El XML en formato string.</param>
-            <returns>El XML procesado.</returns>
+            <param name="ListaRutasArchivosCSS">La lista de rutas de archivos CSS a incluir en el informe.</param>
         </member>
         <member name="T:HelperMaster.NET.MVC.HelperMVC">
             <summary>
