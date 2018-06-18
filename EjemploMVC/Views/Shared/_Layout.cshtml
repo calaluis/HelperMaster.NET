@@ -1,0 +1,27 @@
+﻿<html5 lang="es-cl">
+    <head>
+        <meta charset="utf-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no" />
+        @Styles.Render("~/Content/bootstrap")
+        @Styles.Render("~/Content/bootstraptheme")
+        @Scripts.Render("~/bundles/jquery")
+        @Scripts.Render("~/bundles/bootstrap")
+    </head>
+    <body style="background-color:#f5f5f5">
+        <br />
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12" align="center">
+                    <h1>HelperMaster.NET</h1>
+                </div>
+            </div>
+            <div class="row" style="background-color:white">
+                <br />
+                <div class="col-md-12">
+                    @RenderBody()
+                </div>
+            </div>
+        </div>
+    </body>
+</html5>
