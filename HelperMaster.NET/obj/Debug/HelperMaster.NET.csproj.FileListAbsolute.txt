@@ -138,7 +138,6 @@ F:\GitHub\HelperMaster.NET\HelperMaster.NET\bin\Debug\es\System.Web.WebPages.Raz
 F:\GitHub\HelperMaster.NET\HelperMaster.NET\bin\Debug\es\Microsoft.VisualStudio.Data.Services.resources.dll
 F:\GitHub\HelperMaster.NET\HelperMaster.NET\bin\Debug\es\Microsoft.VisualStudio.Data.Core.resources.dll
 F:\GitHub\HelperMaster.NET\HelperMaster.NET\bin\Debug\es\Microsoft.VisualStudio.GraphModel.resources.dll
-F:\GitHub\HelperMaster.NET\HelperMaster.NET\obj\Debug\HelperMaster.NET.csprojResolveAssemblyReference.cache
 F:\GitHub\HelperMaster.NET\HelperMaster.NET\obj\Debug\HelperMaster.NET.csproj.CoreCompileInputs.cache
 F:\GitHub\HelperMaster.NET\HelperMaster.NET\obj\Debug\HelperMaster.NET.csproj.CopyComplete
 F:\GitHub\HelperMaster.NET\HelperMaster.NET\obj\Debug\HelperMaster.NET.dll
