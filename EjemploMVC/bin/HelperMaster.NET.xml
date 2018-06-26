@@ -392,11 +392,12 @@
             Clase de ayuda que permite subsanar fragmentos de funcionalidades técnicas.
             </summary>
         </member>
-        <member name="M:HelperMaster.NET.General.Helper.ConsultarArchivoDesdeEnsamblado(System.String)">
+        <member name="M:HelperMaster.NET.General.Helper.ConsultarArchivoDesdeEnsamblado(System.String,System.String)">
             <summary>
             Metodo que permite obtener un archivo incrustado desde el ensamblado para ser guardado en disco.
             </summary>
             <param name="NombreArchivo">El nombre del archivo a obtener dentro del ensamblado.</param>
+            <param name="NombreArchivoEnsamblado"></param>
             <returns>TRUE = La ruta fisica del archivo rescatado; FALSE = El archivo no fue encontrado dentro del ensamblado.</returns>
         </member>
         <member name="M:HelperMaster.NET.General.Helper.CompatibilizarCaracterEnXML(System.String)">
@@ -429,6 +430,15 @@
             <param name="Filas">Las filas del arreglo.</param>
             <param name="Columnas">Las columnas del arreglo.</param>
             <returns>El arreglo de dos dimensiones.</returns>
+        </member>
+        <member name="M:HelperMaster.NET.General.Helper.GenerarImagenEnStringBase64(System.Byte[])">
+            <summary>
+            Método que permite convertir un arreglo de bytes de una imagen, a variable de cadena de la misma imagen en base 64. 
+            Esto permite manipular el muestreo de las imágenes en memoria, sin necesidad de guardar la imagen en un servidor de archivos 
+            para ser mostrado en una página web.
+            </summary>
+            <param name="ArchivoImagen">El archivo de imagen en arreglo de bytes.</param>
+            <returns>La imgen en variable de cadena en base 64.</returns>
         </member>
         <member name="T:HelperMaster.NET.General.PaginacionEnVolumenes`1">
             <summary>

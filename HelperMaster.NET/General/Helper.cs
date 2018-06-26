@@ -17,11 +17,12 @@ namespace HelperMaster.NET.General
         /// Metodo que permite obtener un archivo incrustado desde el ensamblado para ser guardado en disco.
         /// </summary>
         /// <param name="NombreArchivo">El nombre del archivo a obtener dentro del ensamblado.</param>
+        /// <param name="NombreArchivoEnsamblado"></param>
         /// <returns>TRUE = La ruta fisica del archivo rescatado; FALSE = El archivo no fue encontrado dentro del ensamblado.</returns>
-        public static Respuesta<byte[]> ConsultarArchivoDesdeEnsamblado(string NombreArchivo)
+        public static Respuesta<byte[]> ConsultarArchivoDesdeEnsamblado(string NombreArchivo, string NombreArchivoEnsamblado)
         {
             Respuesta<byte[]> Resp = new Respuesta<byte[]>();
-            Assembly A = Assembly.GetExecutingAssembly();
+            Assembly A = Assembly.LoadFrom(AppDomain.CurrentDomain.RelativeSearchPath + "\\" +NombreArchivoEnsamblado);
             using (MemoryStream MEM = new MemoryStream())
             {
                 var Recursos = A.GetManifestResourceNames();

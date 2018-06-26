@@ -22,18 +22,18 @@ namespace EjemploNegocio.Reporteria.Libreria
         public Respuesta<byte[]> ConsultarReporte(string Test)
         {
             Respuesta<byte[]> Resp = new Respuesta<byte[]>();
-
-            var ObtPlantilla = Helper.ConsultarArchivoDesdeEnsamblado("ReporteEjemplo.html");
+            
+            var ObtPlantilla = Helper.ConsultarArchivoDesdeEnsamblado("ReporteEjemplo.html", "EjemploNegocio.dll");
             if (!ObtPlantilla.decision)
             { return Resp.MensajeGenerico(); }
 
             this.P = new PDF(ObtPlantilla.estructuraDatos);
             this.P.PlantillaPDF = this.P.PlantillaPDF.Replace("[FechaCreacion]", DateTime.Now.ToString());
-            var Imagen = Helper.ConsultarArchivoDesdeEnsamblado("001_hola_mundo.jpg");
+            var Imagen = Helper.ConsultarArchivoDesdeEnsamblado("001_hola_mundo.jpg", "EjemploNegocio.dll");
             if (!Imagen.decision)
             { return Resp.MensajeGenerico(); }
 
-            this.P.PlantillaPDF = this.P.PlantillaPDF.Replace("[IMAGEN]", "data:image/jpg;base64," + Convert.ToBase64String(Imagen.estructuraDatos));
+            this.P.PlantillaPDF = this.P.PlantillaPDF.Replace("[IMAGEN]", Helper.GenerarImagenEnStringBase64(Imagen.estructuraDatos));
             this.P.PlantillaPDF = this.P.PlantillaPDF.Replace("[TEST]", "Reporte de ejemplo que demuestra la usabilidad " +
                 "de otorger reportería a un sistema de información administrativo.");
 
