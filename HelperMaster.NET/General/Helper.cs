@@ -1,6 +1,8 @@
 ﻿using HelperMaster.NET.DTO;
 using HelperMaster.NET.Enum;
+using System;
 using System.Collections.Generic;
+using System.Drawing;
 using System.IO;
 using System.Reflection;
 
@@ -125,6 +127,21 @@ namespace HelperMaster.NET.General
             }
 
             return Resp;
+        }
+        /// <summary>
+        /// Método que permite convertir un arreglo de bytes de una imagen, a variable de cadena de la misma imagen en base 64. 
+        /// Esto permite manipular el muestreo de las imágenes en memoria, sin necesidad de guardar la imagen en un servidor de archivos 
+        /// para ser mostrado en una página web.
+        /// </summary>
+        /// <param name="ArchivoImagen">El archivo de imagen en arreglo de bytes.</param>
+        /// <returns>La imgen en variable de cadena en base 64.</returns>
+        public static string GenerarImagenEnStringBase64(byte[] ArchivoImagen)
+        {
+            using (Image img = Image.FromStream(new MemoryStream(ArchivoImagen)))
+            {
+                string ext = new ImageFormatConverter().ConvertToString(img.RawFormat);
+                return "data:image/" + ext + ";base64," + Convert.ToBase64String(ArchivoImagen);
+            }
         }
     }
 }
