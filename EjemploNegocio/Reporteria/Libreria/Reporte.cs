@@ -35,7 +35,7 @@ namespace EjemploNegocio.Reporteria.Libreria
 
             this.P.PlantillaPDF = this.P.PlantillaPDF.Replace("[IMAGEN]", Helper.GenerarImagenEnStringBase64(Imagen.estructuraDatos));
             this.P.PlantillaPDF = this.P.PlantillaPDF.Replace("[TEST]", "Reporte de ejemplo que demuestra la usabilidad " +
-                "de otorger reportería a un sistema de información administrativo.");
+                "de otorgar reportería a un sistema de información administrativo.");
 
             this.P.GenerarPDF();
 
