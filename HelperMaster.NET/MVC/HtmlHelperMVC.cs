@@ -259,5 +259,88 @@ namespace HelperMaster.NET.MVC
 
             return new MvcHtmlString(ConstructorTAG.ToString());
         }
+        /// <summary>
+        /// Método Helper que permite mostrar un reporte específico en pantalla.
+        /// </summary>
+        /// <param name="helper">El Helper de MVC (tomado de forma implícita).</param>
+        /// <param name="PDF">El archivo PDF.</param>
+        /// <param name="NombreVistaReporte">El nombre de la vista que procesará la petición.</param>
+        /// <returns>El reporte procesado para ser mostrado en pantalla.</returns>
+        public static MvcHtmlString VisorReporte(this HtmlHelper helper, byte[] PDF, string NombreVistaReporte)
+        {
+            if (string.IsNullOrEmpty(NombreVistaReporte))
+            {
+                return new MvcHtmlString(string.Empty);
+            }
+            return ObtenerMarco(PDF, NombreVistaReporte, null);
+        }
+        /// <summary>
+        /// Método Helper que permite mostrar un reporte específico en pantalla.
+        /// </summary>
+        /// <param name="helper">El Helper de MVC (tomado de forma implícita).</param>
+        /// <param name="PDF">El archivo PDF.</param>
+        /// <param name="NombreVistaReporte">El nombre de la vista que procesará la petición.</param>
+        /// <param name="AtributosHTML">Los atributos HTML del TAG IFRAME.</param>
+        /// <returns>El reporte procesado para ser mostrado en pantalla.</returns>
+        public static MvcHtmlString VisorReporte(this HtmlHelper helper, byte[] PDF, string NombreVistaReporte, object AtributosHTML)
+        {
+            if (string.IsNullOrEmpty(NombreVistaReporte))
+            {
+                return new MvcHtmlString(string.Empty);
+            }
+            return ObtenerMarco(PDF, NombreVistaReporte, AtributosHTML);
+        }
+        /// <summary>
+        /// Método que permite definir el marco (IFRAME) para la reportería.
+        /// </summary>
+        /// <param name="PDF">El archivo PDF.</param>
+        /// <param name="NombreVistaReporte">El nombre de la vista que procesará la petición.</param>
+        /// <param name="AtributosHTML">Los atributos HTML del IFRAME.</param>
+        /// <returns>El IFRAME procesado.</returns>
+        private static MvcHtmlString ObtenerMarco(byte[] PDF, string NombreVistaReporte, object AtributosHTML)
+        {
+            if (PDF == null)
+            {
+                throw new ArgumentNullException("Reporte", "El reporte no puede venir nulo.");
+            }
+
+            IDictionary<string, object> AtributosHTMLParseados = HtmlHelper.AnonymousObjectToHtmlAttributes(AtributosHTML);
+
+            #region Obtener ID del Marco.
+
+            string MarcoID = string.Empty;
+
+            if (AtributosHTMLParseados["id"] == null)
+            {
+                MarcoID = "r" + Guid.NewGuid().ToString();
+            }
+            else
+            {
+                MarcoID = TagBuilder.CreateSanitizedId(AtributosHTMLParseados["id"].ToString());
+                if (string.IsNullOrEmpty(MarcoID))
+                {
+                    throw new ArgumentNullException("AtributosHTMLParseados.id", "El valor no puede ser nulo o vacío.");
+                }
+            }
+
+            #endregion
+
+            #region Crear el TAG del Marco.
+
+            UrlHelper ContextUrl = new UrlHelper(HttpContext.Current.Request.RequestContext);
+            string UrlString = ContextUrl.Action(NombreVistaReporte, new { Archivo = Convert.ToBase64String(PDF) });
+
+            TagBuilder ConstructorTAG = new TagBuilder("iframe");
+            ConstructorTAG.GenerateId(MarcoID);
+            ConstructorTAG.MergeAttribute("src", UrlString);
+            ConstructorTAG.MergeAttributes(AtributosHTMLParseados, false);
+            ConstructorTAG.SetInnerText("iframes no soportado.");
+
+            #endregion
+
+            string Result = ConstructorTAG.ToString();
+
+            return new MvcHtmlString(Result);
+        }
     }
 }

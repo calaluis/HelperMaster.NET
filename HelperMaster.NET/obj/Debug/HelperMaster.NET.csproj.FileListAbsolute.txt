@@ -142,3 +142,4 @@ F:\GitHub\HelperMaster.NET\HelperMaster.NET\obj\Debug\HelperMaster.NET.csproj.Co
 F:\GitHub\HelperMaster.NET\HelperMaster.NET\obj\Debug\HelperMaster.NET.csproj.CopyComplete
 F:\GitHub\HelperMaster.NET\HelperMaster.NET\obj\Debug\HelperMaster.NET.dll
 F:\GitHub\HelperMaster.NET\HelperMaster.NET\obj\Debug\HelperMaster.NET.pdb
+F:\GitHub\HelperMaster.NET\HelperMaster.NET\obj\Debug\HelperMaster.NET.csprojResolveAssemblyReference.cache

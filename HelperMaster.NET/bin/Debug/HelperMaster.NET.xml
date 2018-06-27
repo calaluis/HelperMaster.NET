@@ -785,6 +785,34 @@
             <param name="AtributosHTML">Los atributos HTML del IFRAME.</param>
             <returns>El IFRAME procesado.</returns>
         </member>
+        <member name="M:HelperMaster.NET.MVC.HtmlHelperMVC.VisorReporte(System.Web.Mvc.HtmlHelper,System.Byte[],System.String)">
+            <summary>
+            Método Helper que permite mostrar un reporte específico en pantalla.
+            </summary>
+            <param name="helper">El Helper de MVC (tomado de forma implícita).</param>
+            <param name="PDF">El archivo PDF.</param>
+            <param name="NombreVistaReporte">El nombre de la vista que procesará la petición.</param>
+            <returns>El reporte procesado para ser mostrado en pantalla.</returns>
+        </member>
+        <member name="M:HelperMaster.NET.MVC.HtmlHelperMVC.VisorReporte(System.Web.Mvc.HtmlHelper,System.Byte[],System.String,System.Object)">
+            <summary>
+            Método Helper que permite mostrar un reporte específico en pantalla.
+            </summary>
+            <param name="helper">El Helper de MVC (tomado de forma implícita).</param>
+            <param name="PDF">El archivo PDF.</param>
+            <param name="NombreVistaReporte">El nombre de la vista que procesará la petición.</param>
+            <param name="AtributosHTML">Los atributos HTML del TAG IFRAME.</param>
+            <returns>El reporte procesado para ser mostrado en pantalla.</returns>
+        </member>
+        <member name="M:HelperMaster.NET.MVC.HtmlHelperMVC.ObtenerMarco(System.Byte[],System.String,System.Object)">
+            <summary>
+            Método que permite definir el marco (IFRAME) para la reportería.
+            </summary>
+            <param name="PDF">El archivo PDF.</param>
+            <param name="NombreVistaReporte">El nombre de la vista que procesará la petición.</param>
+            <param name="AtributosHTML">Los atributos HTML del IFRAME.</param>
+            <returns>El IFRAME procesado.</returns>
+        </member>
         <member name="T:HelperMaster.NET.WindowsForms.HelperWindowsForms">
             <summary>
             Clase de ayudante orientado al arquetipo WINDOWS FORMS.
