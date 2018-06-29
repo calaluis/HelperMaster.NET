@@ -1,4 +1,6 @@
-﻿using System.Web.Mvc;
+﻿using EjemploNegocio.Reporteria.Libreria;
+using System;
+using System.Web.Mvc;
 
 namespace EjemploMVC.Controllers
 {
@@ -19,6 +21,33 @@ namespace EjemploMVC.Controllers
             filterContext.Controller.ViewData["Version"] = fvi.FileVersion;
 
             base.OnResultExecuting(filterContext);
+        }
+
+        public ActionResult Reporte(string Codigo, string Datos)
+        {
+            if (string.IsNullOrEmpty(Codigo))
+            {
+                return View();
+            }
+            else
+            {
+                Reporte Report = new Reporte();
+                switch (Codigo)
+                {
+                    case "ReporteriaEjemplo":
+                        var Resultado = Report.ConsultarReporte(Datos);
+                        if (Resultado.decision)
+                        {
+                            return File(Resultado.estructuraDatos, System.Net.Mime.MediaTypeNames.Application.Pdf);
+                        }
+                        else
+                        {
+                            return View();
+                        }
+                    default:
+                        return View();
+                }
+            }
         }
     }
 }

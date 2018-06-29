@@ -1,0 +1,23 @@
+﻿@model EjemploMVC.Models.ViewModels.ITextSharpVm
+
+@section Menu
+{
+	@Html.Partial("_MenuCommon")
+}
+
+@Html.Partial("_Cargando")
+
+@using (Ajax.BeginForm("ITextSharp", null, new AjaxOptions
+{
+	HttpMethod = "POST",
+	UpdateTargetId = "Formulario",
+	InsertionMode = InsertionMode.Replace,
+	OnBegin = "EnProceso('" + ViewData["Loading"] + "')",
+	OnSuccess = "Procesado()"
+}, new { @class = "form-horizontal" }))
+{
+	@Html.AntiForgeryToken()
+	<div id="Formulario">
+		@Html.Partial("_ITextSharpDetalle", Model)
+	</div>
+}

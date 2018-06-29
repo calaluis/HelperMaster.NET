@@ -8,6 +8,7 @@ namespace EjemploMVC.App_Start
         public static void RegistrarModelos()
         {
             ModelBinders.Binders.Add(typeof(InicioVm), new InicioVm());
+            ModelBinders.Binders.Add(typeof(ITextSharpVm), new ITextSharpVm());
         }
     }
 }

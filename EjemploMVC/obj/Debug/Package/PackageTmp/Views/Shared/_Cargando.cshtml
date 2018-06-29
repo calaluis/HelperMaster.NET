@@ -1,0 +1,14 @@
+﻿@Scripts.Render("~/bundles/BlockUI")
+
+<script type="text/javascript">
+    function EnProceso(url)
+    {
+        $.blockUI({
+            message: '<h1><img id="waitimage" src="' + url + '" width="40" /> Procesando... </h1>'
+        });
+    }
+    function Procesado()
+    {
+        $.unblockUI();
+    }
+</script>

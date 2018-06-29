@@ -1,4 +1,4 @@
-﻿using EjemploNegocio.Reporteria.Libreria;
+﻿using EjemploMVC.Models.ViewModels;
 using System.Web.Mvc;
 
 namespace EjemploMVC.Controllers
@@ -8,17 +8,11 @@ namespace EjemploMVC.Controllers
         // GET: Reporteria
         public ActionResult ITextSharp()
         {
-            Reporte Report = new Reporte();
-            var Resp = Report.ConsultarReporte("1, 2, 3, ...... probando....");
-            if (Resp.decision)
-            {
-                return File(Resp.estructuraDatos, System.Net.Mime.MediaTypeNames.Application.Pdf);
-            }
-            else
-            {
-                TempData["Mensaje"] = Resp.mensaje;
-                return RedirectToAction("Index", "Inicio");
-            }
+            ITextSharpVm Datos = new ITextSharpVm();
+            Datos.NombreVistaEjecutora = "Reporte";
+            Datos.CodigoReporte = "ReporteriaEjemplo";
+            Datos.DatosEntrada = "1, 2, 3, ...... probando....";
+            return View(Datos);
         }
     }
 }

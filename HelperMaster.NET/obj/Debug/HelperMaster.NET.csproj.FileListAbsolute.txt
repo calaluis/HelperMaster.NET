@@ -26,6 +26,7 @@ F:\GitHub\HelperMaster.NET\HelperMaster.NET\bin\Debug\System.Web.WebPages.Razor.
 F:\GitHub\HelperMaster.NET\HelperMaster.NET\bin\Debug\EnvDTE.dll
 F:\GitHub\HelperMaster.NET\HelperMaster.NET\bin\Debug\Microsoft.VisualStudio.Shell.Interop.dll
 F:\GitHub\HelperMaster.NET\HelperMaster.NET\bin\Debug\Microsoft.VisualStudio.Shell.Interop.8.0.dll
+F:\GitHub\HelperMaster.NET\HelperMaster.NET\bin\Debug\Microsoft.Build.Framework.dll
 F:\GitHub\HelperMaster.NET\HelperMaster.NET\bin\Debug\stdole.dll
 F:\GitHub\HelperMaster.NET\HelperMaster.NET\bin\Debug\Microsoft.VisualStudio.OLE.Interop.dll
 F:\GitHub\HelperMaster.NET\HelperMaster.NET\bin\Debug\Microsoft.VisualStudio.TextManager.Interop.dll
@@ -42,6 +43,7 @@ F:\GitHub\HelperMaster.NET\HelperMaster.NET\bin\Debug\Microsoft.VisualStudio.Des
 F:\GitHub\HelperMaster.NET\HelperMaster.NET\bin\Debug\Microsoft.VisualStudio.TemplateWizardInterface.dll
 F:\GitHub\HelperMaster.NET\HelperMaster.NET\bin\Debug\Microsoft.VisualStudio.Debugger.InteropA.dll
 F:\GitHub\HelperMaster.NET\HelperMaster.NET\bin\Debug\EnvDTE80.dll
+F:\GitHub\HelperMaster.NET\HelperMaster.NET\bin\Debug\Microsoft.Build.Tasks.Core.dll
 F:\GitHub\HelperMaster.NET\HelperMaster.NET\bin\Debug\Microsoft.VisualStudio.Data.Services.dll
 F:\GitHub\HelperMaster.NET\HelperMaster.NET\bin\Debug\VSLangProj.dll
 F:\GitHub\HelperMaster.NET\HelperMaster.NET\bin\Debug\Microsoft.VisualStudio.Shell.Interop.11.0.dll
@@ -51,8 +53,10 @@ F:\GitHub\HelperMaster.NET\HelperMaster.NET\bin\Debug\VSLangProj80.dll
 F:\GitHub\HelperMaster.NET\HelperMaster.NET\bin\Debug\Microsoft.VisualStudio.ManagedInterfaces.dll
 F:\GitHub\HelperMaster.NET\HelperMaster.NET\bin\Debug\Microsoft.VisualStudio.WCFReference.Interop.dll
 F:\GitHub\HelperMaster.NET\HelperMaster.NET\bin\Debug\Microsoft.VisualStudio.Debugger.Interop.11.0.dll
+F:\GitHub\HelperMaster.NET\HelperMaster.NET\bin\Debug\System.Threading.Tasks.Dataflow.dll
 F:\GitHub\HelperMaster.NET\HelperMaster.NET\bin\Debug\Microsoft.VisualStudio.GraphModel.dll
 F:\GitHub\HelperMaster.NET\HelperMaster.NET\bin\Debug\Microsoft.MSXML.dll
+F:\GitHub\HelperMaster.NET\HelperMaster.NET\bin\Debug\Microsoft.Build.Utilities.Core.dll
 F:\GitHub\HelperMaster.NET\HelperMaster.NET\bin\Debug\Microsoft.VisualStudio.TextManager.Interop.10.0.dll
 F:\GitHub\HelperMaster.NET\HelperMaster.NET\bin\Debug\VSLangProj2.dll
 F:\GitHub\HelperMaster.NET\HelperMaster.NET\bin\Debug\itextsharp.xml
@@ -138,8 +142,8 @@ F:\GitHub\HelperMaster.NET\HelperMaster.NET\bin\Debug\es\System.Web.WebPages.Raz
 F:\GitHub\HelperMaster.NET\HelperMaster.NET\bin\Debug\es\Microsoft.VisualStudio.Data.Services.resources.dll
 F:\GitHub\HelperMaster.NET\HelperMaster.NET\bin\Debug\es\Microsoft.VisualStudio.Data.Core.resources.dll
 F:\GitHub\HelperMaster.NET\HelperMaster.NET\bin\Debug\es\Microsoft.VisualStudio.GraphModel.resources.dll
+F:\GitHub\HelperMaster.NET\HelperMaster.NET\obj\Debug\HelperMaster.NET.csprojResolveAssemblyReference.cache
 F:\GitHub\HelperMaster.NET\HelperMaster.NET\obj\Debug\HelperMaster.NET.csproj.CoreCompileInputs.cache
 F:\GitHub\HelperMaster.NET\HelperMaster.NET\obj\Debug\HelperMaster.NET.csproj.CopyComplete
 F:\GitHub\HelperMaster.NET\HelperMaster.NET\obj\Debug\HelperMaster.NET.dll
 F:\GitHub\HelperMaster.NET\HelperMaster.NET\obj\Debug\HelperMaster.NET.pdb
-F:\GitHub\HelperMaster.NET\HelperMaster.NET\obj\Debug\HelperMaster.NET.csprojResolveAssemblyReference.cache

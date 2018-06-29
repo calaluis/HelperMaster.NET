@@ -1,0 +1,67 @@
+﻿
+
+@Styles.Render("~/Content/bootstrapsubmenu")
+
+@Scripts.Render("~/bundles/bootstrapsubmenu")
+
+<nav class="navbar navbar-default">
+	<div class="container">
+		<div class="navbar-header">
+			<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target=".navbar-collapse">
+				<span class="sr-only">Toggle navigation</span>
+				<span class="icon-bar"></span>
+				<span class="icon-bar"></span>
+				<span class="icon-bar"></span>
+			</button>
+			<a class="navbar-brand" href="@Url.Action("Index", "Inicio")">HelperMaster.NET Ejemplos</a>
+		</div>
+		<div class="navbar-collapse collapse">
+			<ul class="nav navbar-nav">
+				<li class="dropdown">
+					<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Reportería <span class="caret"></span></a>
+					<ul class="dropdown-menu">
+						<li><a href="#">Report Viewer</a></li>
+						<li><a href="@Url.Action("ITextSharp", "Reporteria")">ITextSharp</a></li>
+					</ul>
+				</li>
+				<li class="dropdown">
+					<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Criptografía <span class="caret"></span></a>
+					<ul class="dropdown-menu">
+						<li><a href="#">AES</a></li>
+					</ul>
+				</li>
+				<li class="dropdown">
+					<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Formularios <span class="caret"></span></a>
+					<ul class="dropdown-menu">
+						<li><a href="#">Validación con DataAnnotations</a></li>
+					</ul>
+				</li>
+				<li class="dropdown">
+					<a href="#" tabindex="0" class="dropdown-toggle" data-toggle="dropdown" data-submenu>Conversiones <span class="caret"></span></a>
+					<ul class="dropdown-menu">
+						<li class="dropdown-submenu">
+							<a href="#" tabindex="0">String a estructura X</a>
+							<ul class="dropdown-menu">
+								<li><a href="#">String a Decimal</a></li>
+								<li><a href="#">String a Int32</a></li>
+								<li><a href="#">String a Int64</a></li>
+								<li><a href="#">String a DateTime</a></li>
+								<li><a href="#">String a Double</a></li>
+							</ul>
+						</li>
+						<li><a href="#">Lista de String a String con delimitador</a></li>
+						<li><a href="#">Lista de Int32 a String con delimitador</a></li>
+						<li><a href="#">Arreglo de 2D a 1D</a></li>
+						<li><a href="#">Arreglo de 1D a 2D</a></li>
+					</ul>
+				</li>
+			</ul>
+		</div>
+	</div>
+</nav>
+
+<script type="text/javascript">
+    $(function () {
+        $('[data-submenu]').submenupicker();
+            });
+</script>

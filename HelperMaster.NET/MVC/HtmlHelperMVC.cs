@@ -263,45 +263,48 @@ namespace HelperMaster.NET.MVC
         /// Método Helper que permite mostrar un reporte específico en pantalla.
         /// </summary>
         /// <param name="helper">El Helper de MVC (tomado de forma implícita).</param>
-        /// <param name="PDF">El archivo PDF.</param>
+        /// <param name="CodigoReporte">Un código distintivo del reporte.</param>
+        /// <param name="DatosEntrada">Los datos de entrada serializados por JSON.</param>
         /// <param name="NombreVistaReporte">El nombre de la vista que procesará la petición.</param>
         /// <returns>El reporte procesado para ser mostrado en pantalla.</returns>
-        public static MvcHtmlString VisorReporte(this HtmlHelper helper, byte[] PDF, string NombreVistaReporte)
+        public static MvcHtmlString VisorReporte(this HtmlHelper helper, string CodigoReporte, string DatosEntrada, string NombreVistaReporte)
         {
             if (string.IsNullOrEmpty(NombreVistaReporte))
             {
                 return new MvcHtmlString(string.Empty);
             }
-            return ObtenerMarco(PDF, NombreVistaReporte, null);
+            return ObtenerMarco(CodigoReporte, DatosEntrada, NombreVistaReporte, null);
         }
         /// <summary>
         /// Método Helper que permite mostrar un reporte específico en pantalla.
         /// </summary>
         /// <param name="helper">El Helper de MVC (tomado de forma implícita).</param>
-        /// <param name="PDF">El archivo PDF.</param>
+        /// <param name="CodigoReporte">Un código distintivo del reporte.</param>
+        /// <param name="DatosEntrada">Los datos de entrada serializados por JSON.</param>
         /// <param name="NombreVistaReporte">El nombre de la vista que procesará la petición.</param>
         /// <param name="AtributosHTML">Los atributos HTML del TAG IFRAME.</param>
         /// <returns>El reporte procesado para ser mostrado en pantalla.</returns>
-        public static MvcHtmlString VisorReporte(this HtmlHelper helper, byte[] PDF, string NombreVistaReporte, object AtributosHTML)
+        public static MvcHtmlString VisorReporte(this HtmlHelper helper, string CodigoReporte, string DatosEntrada, string NombreVistaReporte, object AtributosHTML)
         {
             if (string.IsNullOrEmpty(NombreVistaReporte))
             {
                 return new MvcHtmlString(string.Empty);
             }
-            return ObtenerMarco(PDF, NombreVistaReporte, AtributosHTML);
+            return ObtenerMarco(CodigoReporte, DatosEntrada, NombreVistaReporte, AtributosHTML);
         }
         /// <summary>
         /// Método que permite definir el marco (IFRAME) para la reportería.
         /// </summary>
-        /// <param name="PDF">El archivo PDF.</param>
+        /// <param name="CodigoReporte">Un código distintivo del reporte.</param>
+        /// <param name="DatosEntrada">Los datos de entrada serializados por JSON.</param>
         /// <param name="NombreVistaReporte">El nombre de la vista que procesará la petición.</param>
         /// <param name="AtributosHTML">Los atributos HTML del IFRAME.</param>
         /// <returns>El IFRAME procesado.</returns>
-        private static MvcHtmlString ObtenerMarco(byte[] PDF, string NombreVistaReporte, object AtributosHTML)
+        private static MvcHtmlString ObtenerMarco(string CodigoReporte, string DatosEntrada, string NombreVistaReporte, object AtributosHTML)
         {
-            if (PDF == null)
+            if (string.IsNullOrEmpty(CodigoReporte))
             {
-                throw new ArgumentNullException("Reporte", "El reporte no puede venir nulo.");
+                throw new ArgumentNullException("Reporte", "El reporte no puede venir sin código.");
             }
 
             IDictionary<string, object> AtributosHTMLParseados = HtmlHelper.AnonymousObjectToHtmlAttributes(AtributosHTML);
@@ -328,7 +331,7 @@ namespace HelperMaster.NET.MVC
             #region Crear el TAG del Marco.
 
             UrlHelper ContextUrl = new UrlHelper(HttpContext.Current.Request.RequestContext);
-            string UrlString = ContextUrl.Action(NombreVistaReporte, new { Archivo = Convert.ToBase64String(PDF) });
+            string UrlString = (ContextUrl.Action(NombreVistaReporte, new { Codigo = CodigoReporte, Datos = DatosEntrada }));
 
             TagBuilder ConstructorTAG = new TagBuilder("iframe");
             ConstructorTAG.GenerateId(MarcoID);

@@ -52,7 +52,7 @@
       <HintPath>..\EjemploNegocio\bin\Debug\EjemploNegocio.dll</HintPath>
     </Reference>
     <Reference Include="HelperMaster.NET, Version=1.0.0.7, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\HelperMaster.NET.1.0.7\lib\net45\HelperMaster.NET.dll</HintPath>
+      <HintPath>..\packages\HelperMaster.NET.1.0.9\lib\net45\HelperMaster.NET.dll</HintPath>
     </Reference>
     <Reference Include="itextsharp, Version=5.5.13.0, Culture=neutral, PublicKeyToken=8354ae6d2174ddca, processorArchitecture=MSIL">
       <HintPath>..\packages\iTextSharp.5.5.13\lib\itextsharp.dll</HintPath>
@@ -204,6 +204,7 @@
     <Content Include="Scripts\bootstrap-submenu.min.js" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
+    <None Include="Properties\PublishProfiles\Local.pubxml" />
     <None Include="Scripts\jquery-1.12.4.intellisense.js" />
     <Content Include="Scripts\jquery-1.12.4.js" />
     <Content Include="Scripts\jquery-1.12.4.min.js" />
@@ -229,7 +230,9 @@
     <Content Include="SqlServerTypes\x86\SqlServerSpatial140.dll">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="Web.config" />
+    <Content Include="Web.config">
+      <SubType>Designer</SubType>
+    </Content>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="App_Start\BundleConfig.cs" />
@@ -242,6 +245,7 @@
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Models\ViewModels\InicioVm.cs" />
+    <Compile Include="Models\ViewModels\ITextSharpVm.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="ReportTemp\VisorReporteTemporal.aspx.cs">
       <DependentUpon>VisorReporteTemporal.aspx</DependentUpon>
@@ -260,6 +264,8 @@
     <Content Include="Views\Shared\_Cargando.cshtml" />
     <Content Include="Views\Shared\_MensajeGenerico.cshtml" />
     <Content Include="Views\Shared\_MenuCommon.cshtml" />
+    <Content Include="Views\Reporteria\ITextSharp.cshtml" />
+    <Content Include="Views\Reporteria\_ITextSharpDetalle.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -269,7 +275,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Views\Reporteria\" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

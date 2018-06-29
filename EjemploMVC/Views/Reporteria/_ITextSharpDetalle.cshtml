@@ -1,0 +1,7 @@
+﻿@model EjemploMVC.Models.ViewModels.ITextSharpVm
+
+@using HelperMaster.NET.MVC;
+
+<div class="embed-responsive embed-responsive-4by3">
+	@Html.VisorReporte(Model.CodigoReporte, Model.DatosEntrada, Model.NombreVistaEjecutora, new { @class = "embed-responsive-item" })
+</div>

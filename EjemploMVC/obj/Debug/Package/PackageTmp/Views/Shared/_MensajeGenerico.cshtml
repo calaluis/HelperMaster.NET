@@ -1,0 +1,52 @@
+﻿@model HelperMaster.NET.DTO.SubRespuesta
+
+<script type="text/javascript">
+    $(function () {
+        if (document.getElementById("MSGDetalle").value != "") {
+            document.getElementById("txtMensaje").style.display = "block";
+            if (document.getElementById("MSGTipoRespuesta").value == "0" ||
+                document.getElementById("MSGTipoRespuesta").value == "2") {
+                document.getElementById("txtMensaje").className = "alert alert-success";
+            }
+            if (document.getElementById("MSGTipoRespuesta").value == "1") {
+                document.getElementById("txtMensaje").className = "alert alert-warning";
+            }
+            if (document.getElementById("MSGTipoRespuesta").value == "3" ||
+                document.getElementById("MSGTipoRespuesta").value == "4") {
+                document.getElementById("txtMensaje").className = "alert alert-danger";
+            }
+            if (document.getElementById("MSGTipoRespuesta").value == "5") {
+                document.getElementById("txtMensaje").className = "alert alert-info";
+            }
+            document.getElementById("txtMensaje").innerHTML = document.getElementById("MSGDetalle").value;
+            document.getElementById("MSGDetalle").value = "";
+            $("#Mensaje").dialog({
+                resizable: false,
+                modal: true,
+                closeText: 'Cerrar',
+                width: 'auto',
+                maxWidth: 450,
+                height: 'auto',
+                show: 'slide',
+                hide: 'slide',
+                fluid: true,
+                position: { my: 'center', at: 'center', of: window },
+                title: document.getElementById('MSGTitulo').value,
+                overlay: {
+                    opacity: 5.8,
+                    background: "black"
+                }
+            });
+        }
+    });
+</script>
+
+<input type="hidden" id="MSGTitulo" name="MSGTitulo" value="@Model.mensaje" />
+<input type="hidden" id="MSGDetalle" name="MSGDetalle" value="@Model.mensajeDetalle" />
+<input type="hidden" id="MSGDecision" name="MSGDecision" value="@(Model.decision ? "1" : "0")" />
+<input type="hidden" id="MSGTipoRespuesta" name="MSGTipoRespuesta" value="@(((int)Model.TipoRespuesta).ToString())" />
+
+<div id="Mensaje">
+	<div id="txtMensaje" align="left" role="alert" style="display:none;">
+	</div>
+</div>
